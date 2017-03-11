@@ -1,0 +1,11 @@
+#this is a simple gitignore file
+#to ignore the bultin liabraries 
+js/bootstrap.min.js
+js/jquery-3.1.1.min.js
+images
+fonts
+css/bootstrap.css
+css/*.map
+css/bootstrap.min.css
+css/bootstrap.theme.css
+css/bootstrap.theme.min.css
