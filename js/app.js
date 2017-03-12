@@ -71,14 +71,6 @@ function formInputCheck(){
          }
      });
     
-    $("#feedbackMsg").on("blur",function(e){
-        if($(this).val() === ""){
-            $("#feedMs").text("Please Enter Feebdack Comments.");
-        }else{
-            $("#feedMs").text("");
-        }
-    });
-    
     if($("#nameOfFeedbacker").val() === "" && $("#emailOfFeedbacker").val() === "" && $("#feedbackMsg").val() === ""){
         return -1;
     }else{

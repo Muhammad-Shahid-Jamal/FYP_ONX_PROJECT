@@ -152,7 +152,6 @@
                             <div class="form-group">
                                 <label for="massage">Massage</label>
                                 <textarea class="form-control" rows="3" id="feedbackMsg"></textarea>
-                                <span class="text-danger" id="feedMs">asds</span>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Submit" class="btn">
