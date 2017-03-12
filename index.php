@@ -1,5 +1,20 @@
 <?php
     require("php/php_files/server_connect_db.php");
+    //checking condition of form of feedback
+    if(!empty($_POST["nameOfUserFeed"]) && !empty($_POST["emailOfUserFeed"]) && !empty($_POST["msgOfUserFeed"])){
+        mysql_select_db("onx_management_dbase");
+        $name = $_POST["nameOfUserFeed"];
+        $email = $_POST["emailOfUserFeed"];
+        $msg = $_POST["msgOfUserFeed"];
+        $queryOfInsert = "INSERT INTO userfeed values('','$name','$email','$msg')";
+        if(mysql_query($queryOfInsert,$conection)){
+            echo("<script>alert('Record added Successfully');</script>");
+        }else{
+            echo("<script>alert('something wrong bro!');</script>");
+        }
+    }else{
+        echo("<script>alert('some wrong');</script>");
+    }
     mysql_close($conection);
 ?>
 <!DOCTYPE html>
@@ -136,22 +151,22 @@
             <div class="raw">
                 <div class="col-md-8 col-lg-8 test1">a</div>
                 <div class="col-md-4 col-lg-4 test">
-                    <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" id="feedback">
+                    <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" id="feedback">
                         <fieldset>
                             <legend>Your Feedback</legend>
                             <div class="form-group">
                                 <label for="name">Your Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="nameOfFeedbacker">
+                                <input type="text" class="form-control" placeholder="Name" id="nameOfFeedbacker" name="nameOfUserFeed">
                                 <span class="text-danger" id="feedN"></span>
                             </div>
                             <div class="form-group">
                                 <label for="email">Your Email</label>
-                                <input type="email" placeholder="example@gmail.com" class="form-control" id="emailOfFeedbacker">
+                                <input type="email" placeholder="example@gmail.com" class="form-control" id="emailOfFeedbacker" name="emailOfUserFeed">
                                 <span class="text-danger" id="feedE"></span>
                             </div>
                             <div class="form-group">
                                 <label for="massage">Massage</label>
-                                <textarea class="form-control" rows="3" id="feedbackMsg"></textarea>
+                                <textarea class="form-control" rows="3" id="feedbackMsg" name="msgOfUserFeed"></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Submit" class="btn">

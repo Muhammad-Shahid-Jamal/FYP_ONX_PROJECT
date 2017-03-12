@@ -36,13 +36,9 @@ $(document).ready(function(){
 //end of show
    
 //checking the feedback form
-    var feedbackFlag = formInputCheck();
+    formInputCheck();
     $("#feedback").on("submit",function(){
-        if(feedbackFlag === 0){
-            return true;
-        }else{
-            return false;
-        }
+        return true;
     });
 });
 
@@ -71,9 +67,13 @@ function formInputCheck(){
          }
      });
     
-    if($("#nameOfFeedbacker").val() === "" && $("#emailOfFeedbacker").val() === "" && $("#feedbackMsg").val() === ""){
-        return -1;
-    }else{
+}
+
+function checkCIField(){
+    
+    if($("#nameOfFeedbacker").val() !== "" && $("#emailOfFeedbacker").val() !== "" && $("#feedbackMsg").val() !== ""){
         return 0;
+    }else{
+        return -1;
     }
 }
