@@ -181,31 +181,7 @@
                     </form>
                 </div>
             </div>
-<!--
-           <div class="raw">
-               <div class="col-lg-11 col-md-11 col-sm-11 col-lg-offset-1 col-md-offset-1">
-                   <ul class="terms">
-                       <li>Terms of Use</li>
-                       <li>Help &amp; Contact Us</li>
-                       <li>Who We Are</li>
-                   </ul>
-               </div>
-            </div>
-            <div class="raw">
-                <div class="col-lg-3 col-md-3 col-lg-offset-7 col-md-offset-7 text-center">
-                    <h4 class="social">Connect With Us</h4>
-                </div>
-            </div>
-            <div class="raw">
-                <div class="col-lg-3 col-md-3 col-lg-push-7 col-md-push-7 text-center">
-                    <img src="images/icons/fb.png">
-                    <img src="images/icons/twit.png">
-                    <img src="images/icons/gogl.png">
-                    <img src="images/icons/inst.png">
-                </div>
-            </div>
--->
         </footer>
-        <script src="js/app.js"></script>
+        <script src="js/app.js" type="text/javascript"></script>
     </body>
 </html>
