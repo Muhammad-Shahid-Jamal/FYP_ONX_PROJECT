@@ -11,9 +11,9 @@
         $msg = checkInput($_POST["msgOfUserFeed"]);
         $queryOfInsert = "INSERT INTO userfeed values('','$name','$email','$msg')";
         if(mysql_query($queryOfInsert,$conection)){
-            echo("<script>alert('Record added Successfully');</script>");
+            echo("<script>alert('Thanks for Feedback');</script>");
         }else{
-            echo("<script>alert('something wrong bro!');</script>");
+            echo("<script>alert('something went Wrong!');</script>");
         }
     }else{
         if(isset($_POST["nameOfUserFeed"]) && isset($_POST["emailOfUserFeed"]) && isset($_POST["msgOfUserFeed"])){
