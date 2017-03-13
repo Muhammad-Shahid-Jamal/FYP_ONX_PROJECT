@@ -12,8 +12,6 @@
         }else{
             echo("<script>alert('something wrong bro!');</script>");
         }
-    }else{
-        echo("<script>alert('some wrong');</script>");
     }
     mysql_close($conection);
 ?>
