@@ -38,7 +38,13 @@ $(document).ready(function(){
 //checking the feedback form
     formInputCheck();
     $("#feedback").on("submit",function(){
-        return true;
+        var check = checkCIField();
+        if(check === 0){
+            return true;
+        }else{
+            alert("empty bro");
+            return false;
+        }
     });
 });
 
