@@ -37,7 +37,7 @@
     <body>
         <div class="page-loading-icon"></div>
         <!--Navbar in this navbar we have icon and name and navigation buttons-->
-        <nav class="navbar navbar-default header navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-default header navbar-fixed-top" role="navigation" id="onxNav">
             <div class="container navbar-my">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
@@ -183,5 +183,6 @@
             </div>
         </footer>
         <script src="js/app.js" type="text/javascript"></script>
+        <script src="js/app1.js"></script>
     </body>
 </html>
