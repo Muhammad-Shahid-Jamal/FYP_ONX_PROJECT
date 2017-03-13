@@ -1,9 +1,6 @@
 // this is for nav bar hide and show:-)
 $(document).ready(function(){
-    var $window = $(window);
-    console.log($window);
     $(window).on("scroll",function(){
-        console.log(window.scrollY);
         var y = window.scrollY;
         if(y > 200){
             $(".navbar-default").css({
@@ -18,7 +15,7 @@ $(document).ready(function(){
             });
         }
 
-        if(y > 900){
+        if(y > 600){
             $("#onxNav").css({
                 'opacity':'0'
             });
