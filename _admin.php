@@ -1,7 +1,8 @@
 <?php
+    require("php/php_files/check_user_input.php");
 if(!empty($_POST["name"]) && !empty($_POST["pass"])){
-    $name = $_POST["name"];
-    $pass = $_POST["pass"];
+    $name = checkInput($_POST["name"]);
+    $pass = checkInput($_POST["pass"]);
     print("<script>alert(\"$name & $pass\");</script>");
 }else{
     print("<script>alert(\"error\")</script>");
@@ -10,6 +11,7 @@ if(!empty($_POST["name"]) && !empty($_POST["pass"])){
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Admin Log</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link type="x-icon" rel="icon" href="images/icons/x-icon.png">
