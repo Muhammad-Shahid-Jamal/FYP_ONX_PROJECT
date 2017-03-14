@@ -1,3 +1,12 @@
+<?php
+if(!empty($_POST["name"]) && !empty($_POST["pass"])){
+    $name = $_POST["name"];
+    $pass = $_POST["pass"];
+    print("<script>alert(\"$name & $pass\");</script>");
+}else{
+    print("<script>alert(\"error\")</script>");
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,12 +22,12 @@
                 <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4" id="login-box">
                     <img src="images/icons/logo.png" alt="ONX LOGO" class="img-responsive">
                     <h2>Admin Panel Access</h2>
-                    <form role="form" action="php/php_admin_pannel/_administration.php" method="POST">
+                    <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
                             <h3>User_name</h3>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input type="text" class="form-control" placeholder="User_name">
+                                <input type="text" class="form-control" placeholder="User_name" name="name">
                             </div>
                         </div>
 
@@ -26,7 +35,7 @@
                             <h3>Password</h3>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="****">
+                                <input type="password" class="form-control" placeholder="****" name="pass">
                             </div>
                         </div>
 
