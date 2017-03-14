@@ -5,7 +5,4 @@
     if(!$conection){
         die("Conection Faild ".mysql_error());
     }
-
-    
-
 ?>
