@@ -157,7 +157,7 @@
             <div class="raw">
                 <div class="col-md-8 col-lg-8 test1">a</div>
                 <div class="col-md-4 col-lg-4">
-                    <form id="feedbackform" role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <form id="feedbackform" role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                         <fieldset>
                             <legend>Your Feedback</legend>
                             <div class="form-group">
