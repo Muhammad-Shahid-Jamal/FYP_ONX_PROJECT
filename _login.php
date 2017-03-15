@@ -4,14 +4,12 @@ if(!empty($_POST["name"]) && !empty($_POST["pass"])){
     $name = checkInput($_POST["name"]);
     $pass = checkInput($_POST["pass"]);
     print("<script>alert(\"$name & $pass\");</script>");
-}else{
-    print("<script>alert(\"error\")</script>");
 }
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Admin Log</title>
+        <title>ONline eXchange in Pakistan</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link type="x-icon" rel="icon" href="images/icons/x-icon.png">
@@ -42,10 +40,10 @@ if(!empty($_POST["name"]) && !empty($_POST["pass"])){
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" value="Log_In" class="form-control btn btn-success" id="submitbtn">
+                            <input type="submit" value="Log_In" class="btn btn-success" id="submitbtn">
                         </div>
                     </form>
-                    <p class="text-warning"><strong>Warning!</strong> Only Admin Have to Authorized for this Login.</p>
+                    <a href="#"><p class="text-warning"><strong>Forget Password ?</strong> Click here</p></a>
                 </div>
             </div>
         </div>

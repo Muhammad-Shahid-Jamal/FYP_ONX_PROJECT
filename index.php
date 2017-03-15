@@ -53,7 +53,7 @@
                 
                 <div class="collapse navbar-collapse" id="myNav">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="select"><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+                        <li class="select"><a href="_login.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
                         <li class="select"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Submit Add</a></li>
                     </ul>
                 </div>
@@ -175,7 +175,7 @@
                                 <textarea class="form-control" rows="3" id="feedbackMsg" name="msgOfUserFeed"></textarea>
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Submit" class="btn">
+                                <input type="submit" value="Submit" class="btn btn-success">
                             </div>
                         </fieldset>
                     </form>
