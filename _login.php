@@ -40,7 +40,7 @@ if(!empty($_POST["name"]) && !empty($_POST["pass"])){
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" value="Log_In" class="btn btn-success" id="submitbtn">
+                            <input type="submit" value="Log In" class="btn btn-success" id="submitbtn">
                         </div>
                     </form>
                     <a href="#"><p class="text-warning"><strong>Forget Password ?</strong> Click here</p></a>
