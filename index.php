@@ -4,20 +4,22 @@
     //for checking user input for any wrong input for hacking:-)
     require("php/php_files/check_user_input.php");
     //checking condition of form of feedback
-    if(!empty($_POST["nameOfUserFeed"]) && !empty($_POST["emailOfUserFeed"]) && !empty($_POST["msgOfUserFeed"])){
-        mysql_select_db("onx_management_dbase");
-        $name = checkInput($_POST["nameOfUserFeed"]);
-        $email = checkInput($_POST["emailOfUserFeed"]);
-        $msg = checkInput($_POST["msgOfUserFeed"]);
-        $queryOfInsert = "INSERT INTO userfeed values('','$name','$email','$msg')";
-        if(mysql_query($queryOfInsert,$conection)){
-            echo("<script>alert('Thanks for Feedback');</script>");
-        }else{
-            echo("<script>alert('something went Wrong!');</script>");
-        }
-    }else{
-        if(isset($_POST["nameOfUserFeed"]) && isset($_POST["emailOfUserFeed"]) && isset($_POST["msgOfUserFeed"])){
-            echo("<script> alert(\"Please Fill Feedback Form\");</script>");
+    if($_POST){
+        if(!empty($_POST["nameOfUserFeed"]) && !empty($_POST["emailOfUserFeed"]) && !empty($_POST["msgOfUserFeed"])){
+            mysql_select_db("onx_management_dbase");
+            $name = checkInput($_POST["nameOfUserFeed"]);
+            $email = checkInput($_POST["emailOfUserFeed"]);
+            $msg = checkInput($_POST["msgOfUserFeed"]);
+           $queryOfInsert = "INSERT INTO userfeed values('','$name','$email','$msg')";
+           if(mysql_query($queryOfInsert,$conection)){
+              echo("<script>alert('Thanks for Feedback');</script>");
+           }else{
+             echo("<script>alert('something went Wrong!');</script>");
+           }
+       }else{
+             if(isset($_POST["nameOfUserFeed"]) && isset($_POST["emailOfUserFeed"]) && isset($_POST["msgOfUserFeed"])){
+             echo("<script> alert(\"Please Fill Feedback Form\");</script>");
+             }
         }
     }
     mysql_close($conection);
