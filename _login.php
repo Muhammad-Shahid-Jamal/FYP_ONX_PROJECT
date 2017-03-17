@@ -24,7 +24,7 @@ if(!empty($_POST["name"]) && !empty($_POST["pass"])){
                     <h2 style="color: #0080c0; margin-top: -5px;">Sign In</h2>
                     <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
-                            <h3>User_name</h3>
+                            <h3>User name</h3>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                 <input type="text" class="form-control" placeholder="User_name" name="name">
