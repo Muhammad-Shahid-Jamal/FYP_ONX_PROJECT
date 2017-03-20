@@ -10,13 +10,21 @@ class DBaseHelper{
         $this->admin=$admin;
         $this->pass=$pass;
         $this->dbName=$dbName;
+        $this->connect();
     }
-    public function connectToDatabase(){
-        $this->connection = mysql_connect($this->server,$this->admin,$this->pass);
-        mysql_select_db($this->dbName);
+    private function connect(){
+        $connection=new mysqli($this->server,$this->admin,$this->pass,$this->dbName);
     }
-    public function closeConnection(){
-        mysql_close($this->connection);
+
+    public function disconnect(){
+        $connection->close();
     }
+    // public function connectToDatabase(){
+    //     $this->connection = mysql_connect($this->server,$this->admin,$this->pass);
+    //     mysql_select_db($this->dbName);
+    // }
+    // public function closeConnection(){
+    //     mysql_close($this->connection);
+    // }
 }
 ?>
