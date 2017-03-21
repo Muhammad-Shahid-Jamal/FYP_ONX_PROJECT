@@ -2,11 +2,10 @@
     require("php/php_files/check_user_input.php");
     require("php/php_files/dbHelper.php");
     $myDb = new DBaseHelper();
-    if($myDb->checkConnection() != TRUE){
-        echo "Error";
-    }else{
-        echo "Success";
-    }
+    $user = new User("admin_shahid","abc123");
+    $data = $myDb->checkUser($user);
+    echo $data[0];
+
     $myDb->disconnect();
 if($_SERVER["REQUEST_METHOD"]=="POST"){
         if(!empty($_POST["name"]) && !empty($_POST["pass"])){
