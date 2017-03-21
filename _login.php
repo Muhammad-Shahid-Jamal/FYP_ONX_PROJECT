@@ -1,9 +1,19 @@
 <?php
     require("php/php_files/check_user_input.php");
-if(!empty($_POST["name"]) && !empty($_POST["pass"])){
-    $name = checkInput($_POST["name"]);
-    $pass = checkInput($_POST["pass"]);
-    print("<script>alert(\"$name & $pass\");</script>");
+    require("php/php_files/dbHelper.php");
+    $myDb = new DBaseHelper();
+    if($myDb->checkConnection() != TRUE){
+        echo "Error";
+    }else{
+        echo "Success";
+    }
+    $myDb->disconnect();
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+        if(!empty($_POST["name"]) && !empty($_POST["pass"])){
+            $name = checkInput($_POST["name"]);
+            $pass = checkInput($_POST["pass"]);
+            print("<script>alert(\"$name & $pass\");</script>");
+        }
 }
 ?>
 <!DOCTYPE html>
