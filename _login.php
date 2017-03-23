@@ -1,17 +1,32 @@
 <?php
     require("php/php_files/check_user_input.php");
     require("php/php_files/dbHelper.php");
-    $myDb = new DBaseHelper();
-    $user = new User("admin_shahid","abc123");
-    $data = $myDb->checkUser($user);
-    echo $data[0];
-
-    $myDb->disconnect();
+    $errorMsg="";
+    $userName="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
         if(!empty($_POST["name"]) && !empty($_POST["pass"])){
+            
             $name = checkInput($_POST["name"]);
             $pass = checkInput($_POST["pass"]);
-            print("<script>alert(\"$name & $pass\");</script>");
+            $myDb = new DBaseHelper();
+            $user = new User($name,$pass);
+            $data = $myDb->checkUser($user);
+            echo $data[0]."<br>";
+            echo $data[1]."<br>";
+            $valueOfuser = $myDb->userFrom($name);
+            echo $valueOfuser;
+            if($data == FALSE){
+                echo "False hogya";
+                $errorMsg = "Your user name is incorect *";
+                $userName = $name;
+            }
+            if($valueOfuser == 1){
+                header('location:php/php_admin_pannel/administration.php');
+            }else if($valueOfuser == 2){
+                header('location:php/php_user_login/user_log.php');
+            }
+
+            $myDb->disconnect();        
         }
 }
 ?>
@@ -36,8 +51,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                             <h3>User name</h3>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input type="text" class="form-control" placeholder="User_name" name="name">
+                                <input type="text" class="form-control" placeholder="User_name" name="name" value=<?=$userName; ?>>
                             </div>
+                            <p class="text-danger"><strong><?=$errorMsg; ?></strong></p>
                         </div>
 
                         <div class="form-group">

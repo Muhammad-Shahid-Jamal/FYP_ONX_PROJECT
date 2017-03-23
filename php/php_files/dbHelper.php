@@ -47,7 +47,24 @@ class DBaseHelper{
             }
             if($this->userData[0] != "" && $this->userData[1] != ""){
                 return $this->userData;
+            }else{
+                return FALSE;
             }
+    }
+
+    public function userFrom($userName){
+        $valueOfUser="";
+        $query = "select _type from type_of_user where _user='$userName'";
+        $result=$this->connection->query($query);
+        while($row=$result->fetch_assoc()){
+            $valueOfUser = $row["_type"];
+        }
+        if($valueOfUser != ""){
+            return $valueOfUser;
+        }else{
+            return FALSE;
+        }
+
     }
 
     public function disconnect(){

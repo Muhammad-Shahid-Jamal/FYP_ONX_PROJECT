@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Admin Pannel</title>
+        <title>USer log Test</title>
     </head>
     <body>
-        <h1>Shahid Admin</h1>
+        <h1>Welcome User</h1>
     </body>
 </html>

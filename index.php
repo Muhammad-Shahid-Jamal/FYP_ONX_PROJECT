@@ -156,8 +156,17 @@
         </div>
         <!--Footer-->
         <footer class="container-fluid footer">
-            <div class="raw">
-                <div class="col-md-8 col-lg-8 test1">a</div>
+            <div class="raw" style="margin-top:20px;">
+                <div class="col-md-8 col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4 text-center test1" style="background-color:white; border-radius:100%;">
+                            <img src="images/icons/logo.png" class="img-responsive" >
+                        </div>
+                        <div class="col-md-4 col-lg-4 test1">c</div>
+                        <div class="col-md-4 col-lg-4 test1">e</div>
+                    </div>
+                </div>
+
                 <div class="col-md-4 col-lg-4">
                     <form id="feedbackform" role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                         <fieldset>
