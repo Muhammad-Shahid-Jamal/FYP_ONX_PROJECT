@@ -32,7 +32,7 @@
         <title>ONline eXchange in Pakistan</title>
         <link type="x-icon" rel="icon" href="images/icons/x-icon.png">
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
         <script src="js/jquery-3.1.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </head>
@@ -119,19 +119,19 @@
             <div class="row" id="categ2">
                 <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
                     <img src="images/icons/pet.png">
-                    <h3>Mobile</h3>
+                    <h3>Pets</h3>
                 </div>
                 <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
                     <img src="images/icons/furn.png">
-                    <h3>Cars</h3>
+                    <h3>Furneture</h3>
                 </div>
                 <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
                     <img src="images/icons/kids.png">
-                    <h3>Bike</h3>
+                    <h3>Kids</h3>
                 </div>
                 <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
                     <img src="images/icons/prop.png">
-                    <h3>Electronic Item</h3>
+                    <h3>Properties</h3>
                 </div>
             </div>
                 <!--Next Categ for small screens always visible-->
@@ -159,30 +159,38 @@
             <div class="raw" style="margin-top:20px;">
                 <div class="col-md-8 col-lg-8">
                     <div class="row">
-                        <div class="col-md-4 col-lg-4 text-center test1" style="background-color:white; border-radius:100%;">
+                        <div class="col-md-4 col-lg-4 text-center" style="background-color:white; border-radius:2%;">
                             <img src="images/icons/logo.png" class="img-responsive" >
+                            <h4>Pakistan</h4>
                         </div>
-                        <div class="col-md-4 col-lg-4 test1">c</div>
-                        <div class="col-md-4 col-lg-4 test1">e</div>
+                        <div class="col-md-4 col-lg-4 text-center">
+                            <h5 style="color:white;">Terms Of Use</h5>
+                            <h4 style="color:white;"><span class="glyphicon glyphicon-chevron-down"></span></h4>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <h5 style="color:white;">Follow Us</h5>
+                                <img src="images/icons/fb.png" alt="facebook">
+                                <img src="images/icons/twit.png" alt="Tweter">
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-md-4 col-lg-4">
                     <form id="feedbackform" role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                         <fieldset>
-                            <legend>Your Feedback</legend>
+                            <legend style="color:white;">Your Feedback</legend>
                             <div class="form-group">
-                                <label for="name">Your Name</label>
+                                <label for="name" style="color:white;">Your Name</label>
                                 <input type="text" class="form-control" placeholder="Name" id="nameOfFeedbacker" name="nameOfUserFeed">
                                 <span class="text-danger" id="feedN"></span>
                             </div>
                             <div class="form-group">
-                                <label for="email">Your Email</label>
+                                <label for="email" style="color:white;">Your Email</label>
                                 <input type="email" placeholder="example@gmail.com" class="form-control" id="emailOfFeedbacker" name="emailOfUserFeed">
                                 <span class="text-danger" id="feedE"></span>
                             </div>
                             <div class="form-group">
-                                <label for="massage">Massage</label>
+                                <label for="massage" style="color:white;">Massage</label>
                                 <textarea class="form-control" rows="3" id="feedbackMsg" name="msgOfUserFeed"></textarea>
                             </div>
                             <div class="form-group">

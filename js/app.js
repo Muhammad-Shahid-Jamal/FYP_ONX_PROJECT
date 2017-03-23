@@ -21,15 +21,15 @@ $(document).ready(function(){
     
 //for categories up and down show start        
     $("#prev").on("click",function(){
-        $("#categ2").slideUp("slow")
-        $("#categ1").slideDown("slow");
+        $("#categ2").fadeOut("slow");
+        $("#categ1").fadeIn("slow");
         $(this).fadeOut("slow");
         $("#next").fadeIn("slow");
     });
     
     $("#next").on("click",function(){
-        $("#categ1").slideUp("slow")
-        $("#categ2").slideDown("slow");
+        $("#categ1").fadeOut("slow");
+        $("#categ2").fadeIn("slow");
         $(this).fadeOut("slow");
         $("#prev").fadeIn("slow");
     });
