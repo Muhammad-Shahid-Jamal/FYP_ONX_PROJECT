@@ -52,22 +52,7 @@ $("#prev").on("click",function(){
     $("#next").fadeIn(2000);
 
 });
-    // $("#prev").on("click",function(){
-    //     $("#categ2").fadeOut("slow");
-    //     $("#categ1").fadeIn("slow");
-    //     $(this).fadeOut("slow");
-    //     $("#next").fadeIn("slow");
-    // });
     
-    // $("#next").on("click",function(){
-    //     $("#categ1").slideUp("fast");
-    //     $("#categ1").fadeOut("fast");
-    //     $("#categ2").fadeIn("slow");
-    //     $(this).fadeOut("slow");
-    //     $("#prev").fadeIn("slow");
-    // });
-//end of show
-   
 //checking the feedback form
     formInputCheck();
 });

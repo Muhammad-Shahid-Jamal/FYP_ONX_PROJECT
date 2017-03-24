@@ -161,15 +161,15 @@
             <div class="raw" style="margin-top:20px;">
                 <div class="col-md-8 col-lg-8">
                     <div class="row">
-                        <div class="col-md-4 col-lg-4 text-center" style="background-color:white; border-radius:2%;">
+                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-center" style="background-color:white; border-radius:2%;">
                             <img src="images/icons/logo.png" class="img-responsive" >
                             <h4>Pakistan</h4>
                         </div>
-                        <div class="col-md-4 col-lg-4 text-center">
+                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-center">
                             <h5 style="color:white;">Terms Of Use</h5>
                             <h4 style="color:white;"><span class="glyphicon glyphicon-chevron-down"></span></h4>
                         </div>
-                        <div class="col-md-4 col-lg-4">
+                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
                             <h5 style="color:white;">Follow Us</h5>
                                 <img src="images/icons/fb.png" alt="facebook">
                                 <img src="images/icons/twit.png" alt="Tweter">
