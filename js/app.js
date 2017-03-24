@@ -19,20 +19,53 @@ $(document).ready(function(){
     },6000);
 //end of slider function
     
-//for categories up and down show start        
-    $("#prev").on("click",function(){
-        $("#categ2").fadeOut("slow");
-        $("#categ1").fadeIn("slow");
-        $(this).fadeOut("slow");
-        $("#next").fadeIn("slow");
+//for categories up and down show start 
+$("#next").on("click",function(){
+    $("#categ2").show();
+    $("#cattab").animate({
+        opacity:"0",
+        right:"95%",
+        // visibility:"hidden"
+    },2000);
+    $("#categ2").animate({
+        opacity:"1",
+        left:"90px"
+    },3000);
+
+    $(this).fadeOut(2000);
+    $("#prev").fadeIn(3000);
+});       
+
+$("#prev").on("click",function(){
+    $("#categ2").animate({
+        opacity:"0",
+        left:"95%"
+    },2000,function(){
+        $("#categ2").hide();
     });
+    $("#cattab").animate({
+        opacity:"1",
+        right:"0%"
+    },3000);
+
+    $(this).fadeOut(3000);
+    $("#next").fadeIn(2000);
+
+});
+    // $("#prev").on("click",function(){
+    //     $("#categ2").fadeOut("slow");
+    //     $("#categ1").fadeIn("slow");
+    //     $(this).fadeOut("slow");
+    //     $("#next").fadeIn("slow");
+    // });
     
-    $("#next").on("click",function(){
-        $("#categ1").fadeOut("slow");
-        $("#categ2").fadeIn("slow");
-        $(this).fadeOut("slow");
-        $("#prev").fadeIn("slow");
-    });
+    // $("#next").on("click",function(){
+    //     $("#categ1").slideUp("fast");
+    //     $("#categ1").fadeOut("fast");
+    //     $("#categ2").fadeIn("slow");
+    //     $(this).fadeOut("slow");
+    //     $("#prev").fadeIn("slow");
+    // });
 //end of show
    
 //checking the feedback form

@@ -95,7 +95,7 @@
             </div>
         </div>
         <!--Categories all-->
-        <div class="container">
+        <div class="container" id="cattab">
         <!--landing page categorie-->
             <div class="row" id="categ1">
                 <div class="col-md-3 col-lg-3 cat text-center">
@@ -115,25 +115,6 @@
                     <h3>Electronic Item</h3>
                 </div>
             </div>
-            <!--next Categoerie for md and lg-->
-            <div class="row" id="categ2">
-                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
-                    <img src="images/icons/pet.png">
-                    <h3>Pets</h3>
-                </div>
-                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
-                    <img src="images/icons/furn.png">
-                    <h3>Furneture</h3>
-                </div>
-                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
-                    <img src="images/icons/kids.png">
-                    <h3>Kids</h3>
-                </div>
-                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
-                    <img src="images/icons/prop.png">
-                    <h3>Properties</h3>
-                </div>
-            </div>
                 <!--Next Categ for small screens always visible-->
             <div class="raw">
                 <div class="visible-sm visible-xs text-center cat">
@@ -149,6 +130,27 @@
                     <h3>Kids</h3>
                 </div>
                 <div class="visible-sm visible-xs text-center cat">
+                    <img src="images/icons/prop.png">
+                    <h3>Properties</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="categ2">
+            <!--next Categoerie for md and lg-->
+            <div class="row">
+                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
+                    <img src="images/icons/pet.png">
+                    <h3>Pets</h3>
+                </div>
+                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
+                    <img src="images/icons/furn.png">
+                    <h3>Furneture</h3>
+                </div>
+                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
+                    <img src="images/icons/kids.png">
+                    <h3>Kids</h3>
+                </div>
+                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
                     <img src="images/icons/prop.png">
                     <h3>Properties</h3>
                 </div>
