@@ -36,6 +36,10 @@ class DBaseHelper{
         }
     }
 
+    public function getConnection(){
+        return $this->connection;
+    }
+
     public function checkUser(User $user){
         $username = $user->getUserName();
         $password = $user->getPass();

@@ -1,0 +1,29 @@
+body{
+    background-image: url(../images/icons/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.admin-nav{
+    height: 75px;
+}
+
+#navlog{
+    width: 50px;
+    height: 50px;
+}
+.navbar-brand img{
+	display: inline-block;
+}
+
+#nav-icon-text{
+	color: white;
+}
+#mynav{
+    margin-top: 15px;
+}
+.user-feed{
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
