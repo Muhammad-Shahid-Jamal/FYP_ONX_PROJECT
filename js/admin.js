@@ -1,11 +1,17 @@
 jQuery(document).ready(function($){
+    var userFeed = false;
     $("#showfeed").on("click",function(e){
+        if(userFeed === false){
         e.preventDefault();
         $(this).parent().toggleClass("active");
+        var $h3 = $("<h3></h3>");
+        $h3.text("User Feedback");
+        $("#main-contain").append($h3);
         $.ajax({
             type: "GET",
             url: "http://127.0.0.1/FYP_Project/php/php_files/feedback.php",
             success: function(data){
+                userFeed = true;
                 var myResponseData = JSON.parse(data);
                 console.log(myResponseData);
                 for(var i=0;i<myResponseData.length;i++){
@@ -28,9 +34,15 @@ jQuery(document).ready(function($){
                     $myRow.append($h5[1]);
                     $myRow.append($h5[2]);
                     $mainDiv.append($myRow);
+                    $mainDiv.hide().fadeIn(500 * i);
                     $("#main-contain").append($mainDiv);
                 }
             }
         });
+    }else{
+        e.preventDefault();
+        $("#main-contain").empty();
+        userFeed = false;
+    }
     });
 });

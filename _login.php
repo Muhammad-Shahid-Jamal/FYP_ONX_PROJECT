@@ -2,6 +2,7 @@
     require("php/php_files/check_user_input.php");
     require("php/php_files/dbHelper.php");
     $errorMsg="";
+    $errorMsg1="";
     $userName="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
         if(!empty($_POST["name"]) && !empty($_POST["pass"])){
@@ -11,19 +12,25 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $myDb = new DBaseHelper();
             $user = new User($name,$pass);
             $data = $myDb->checkUser($user);
-            echo $data[0]."<br>";
-            echo $data[1]."<br>";
             $valueOfuser = $myDb->userFrom($name);
             echo $valueOfuser;
             if($data == FALSE){
-                echo "False hogya";
                 $errorMsg = "Your user name is incorect *";
                 $userName = $name;
             }
-            if($valueOfuser == 1){
-                header('location:php/php_admin_pannel/administration.php');
-            }else if($valueOfuser == 2){
-                header('location:php/php_user_login/user_log.php');
+            if($data[0] == $name && $data[1] == $pass){
+                if($valueOfuser == 1){
+                    session_start();
+                    $_SESSION["auth_admin"] = "true";
+                    header('location:php/php_admin_pannel/administration.php');
+                }else if($valueOfuser == 2){
+                    session_start();
+                    $_SESSION["auth_user"] = "true";
+                    header('location:php_user_login/user_log.php');
+                }
+            }else{
+                $userName = $name;
+                $errorMsg1 = "Your Password is incorect";
             }
 
             $myDb->disconnect();        
@@ -62,13 +69,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input type="password" class="form-control" placeholder="****" name="pass">
                             </div>
+                            <p class="text-danger"><strong><?=$errorMsg1; ?></strong></p>
                         </div>
 
                         <div class="form-group">
                             <input type="submit" value="Log In" class="btn btn-success" id="submitbtn">
                         </div>
                     </form>
-                    <a href="#"><p class="text-warning"><strong>Forget Password ?</strong> Click here</p></a>
+                    <p class="text-warning"><strong>Forget Password ?</strong><a href="#"> Click here</a></p>
                 </div>
             </div>
         </div>

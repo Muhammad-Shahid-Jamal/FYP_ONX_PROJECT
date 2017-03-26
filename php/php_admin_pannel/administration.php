@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!$_SESSION["auth_admin"]){
+    header("location:../../_login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +31,7 @@
             <div class="collapse navbar-collapse" id="mynav">
                 <ul class="nav navbar-nav">
                     <li><a href="#" id="showfeed">Show Feedback</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>
@@ -34,7 +40,6 @@
         <br>
         <br>
         <div class="container text-center" id="main-contain">
-            <h3>User Feedback</h3>
             <!--<div class="row user-feed">
                 <div class="col-md-12 col-lg-12 text-left">
                     <h5><strong>Name:</strong>Shahid </h5>

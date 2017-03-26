@@ -3,7 +3,7 @@
         header("Content-Type: text/javascript charset=UTF-8");
         $mydb = new DBaseHelper();
         $con = $mydb->getConnection();
-        $result = $con->query("select * from userfeed");
+        $result = $con->query("select * from userfeed order by _id DESC");
         $output = array();
         $output = $result->fetch_all(MYSQLI_ASSOC);
         echo json_encode($output);
