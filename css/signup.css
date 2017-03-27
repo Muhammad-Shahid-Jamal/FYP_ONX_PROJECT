@@ -1,0 +1,20 @@
+#login-box{
+    box-shadow: 0px 0px 10px 0px lightgrey;
+    margin-top: 2%;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+#user_icon{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #20a0c0;
+    border-radius: 100%;
+    padding-top: 25px;
+    margin: 0px auto 0px auto;
+    top: 60px;
+    background-color: white;
+    z-index: 9999;
+    box-shadow: 0px 0px 10px 0px #20a0c0;
+    color: #20a0c0;
+}
