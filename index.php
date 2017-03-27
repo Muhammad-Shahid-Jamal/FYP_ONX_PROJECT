@@ -73,7 +73,7 @@
             <img src="images/slider/sl8.jpg" class="slider">
             <!--Hover SignUp Button-->
             <div class="hoverBox">
-                <h2 class="text-center">Sign Up</h2>
+                <h2 class="text-center"><a href="_signup.html" style="text-decoration:none; color:white;">Sign Up</a></h2>
             </div>
         </div>
         <!--heading of categories-->
