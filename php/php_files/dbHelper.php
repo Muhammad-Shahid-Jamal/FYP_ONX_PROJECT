@@ -1,13 +1,13 @@
 <?php
 class User{
-    private $userName;
+    private $userEmail;
     private $pass;
-    public function __construct($userName="",$pass=""){
-        $this->userName = $userName;
+    public function __construct($userEmail="",$pass=""){
+        $this->userEmail = $userEmail;
         $this->pass = $pass;
     }
-    public function getUserName(){
-        return $this->userName;
+    public function getUserEmail(){
+        return $this->userEmail;
     }
 
     public function getPass(){
@@ -41,12 +41,12 @@ class DBaseHelper{
     }
 
     public function checkUser(User $user){
-        $username = $user->getUserName();
+        $useremail = $user->getUserEmail();
         $password = $user->getPass();
-        $query = "select _user,_pass from users where _user='$username'";
+        $query = "select _user_email,_pass from users where _user_email='$useremail'";
         $result=$this->connection->query($query);
             while($row = $result->fetch_assoc()){
-                 $this->userData[0] = $row["_user"];
+                 $this->userData[0] = $row["_user_email"];
                  $this->userData[1] = $row["_pass"];
             }
             if($this->userData[0] != "" && $this->userData[1] != ""){
@@ -56,9 +56,9 @@ class DBaseHelper{
             }
     }
 
-    public function userFrom($userName){
+    public function userFrom($userEmail){
         $valueOfUser="";
-        $query = "select _type from type_of_user where _user='$userName'";
+        $query = "select _type from type_of_user where _user_email='$userEmail'";
         $result=$this->connection->query($query);
         while($row=$result->fetch_assoc()){
             $valueOfUser = $row["_type"];

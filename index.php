@@ -3,6 +3,22 @@
     require("php/php_files/server_connect_db.php");
     //for checking user input for any wrong input for hacking:-)
     require("php/php_files/check_user_input.php");
+    //testing
+    session_start();
+    $logoutBtn="";
+    $userName="My Account";
+    $hoverSignUp = "<div class=\"hoverBox\">".
+                   "<h2 class=\"text-center\"><a href=\"_signup.html\" style=\"text-decoration:none; color:white;\">Sign Up</a></h2>".
+                   "</div>";
+    if(!isset($_SESSION["auth_user"])){
+        $_SESSION["auth_user"]="false";
+    }else{
+        if($_SESSION["auth_user"]){
+            $logoutBtn = "<li class=\"select\"><a href=\"php_user_login/user_logout.php\"><span class=\"glyphicon glyphicon-off\"></span> Logout</a></li>";
+            $userName=$_SESSION["user_name"];
+            $hoverSignUp="";
+        }
+    }
     //checking condition of form of feedback
     if($_POST){
         if(!empty($_POST["nameOfUserFeed"]) && !empty($_POST["emailOfUserFeed"]) && !empty($_POST["msgOfUserFeed"])){
@@ -55,8 +71,9 @@
                 
                 <div class="collapse navbar-collapse" id="myNav">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="select"><a href="_login.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+                        <li class="select"><a href="_login.php"><span class="glyphicon glyphicon-user"></span> <?= $userName;?></a></li>
                         <li class="select"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Submit Add</a></li>
+                        <?php echo $logoutBtn; ?>
                     </ul>
                 </div>
             </div>
@@ -72,9 +89,7 @@
             <img src="images/slider/sl7.jpg" class="slider">
             <img src="images/slider/sl8.jpg" class="slider">
             <!--Hover SignUp Button-->
-            <div class="hoverBox">
-                <h2 class="text-center"><a href="_signup.html" style="text-decoration:none; color:white;">Sign Up</a></h2>
-            </div>
+            <?php echo $hoverSignUp; ?>
         </div>
         <!--heading of categories-->
         <div class="visible-sm visible-xs container text-center categ-sm">

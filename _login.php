@@ -3,22 +3,22 @@
     require("php/php_files/dbHelper.php");
     $errorMsg="";
     $errorMsg1="";
-    $userName="";
+    $userEmail="";
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-        if(!empty($_POST["name"]) && !empty($_POST["pass"])){
+        if(!empty($_POST["email"]) && !empty($_POST["pass"])){
             
-            $name = checkInput($_POST["name"]);
+            $email = checkInput($_POST["email"]);
             $pass = checkInput($_POST["pass"]);
             $myDb = new DBaseHelper();
-            $user = new User($name,$pass);
+            $user = new User($email,$pass);
             $data = $myDb->checkUser($user);
-            $valueOfuser = $myDb->userFrom($name);
+            $valueOfuser = $myDb->userFrom($email);
             echo $valueOfuser;
             if($data == FALSE){
-                $errorMsg = "Your user name is incorect *";
-                $userName = $name;
+                $errorMsg = "Your Email is incorect *";
+                $userEmail = $email;
             }
-            if($data[0] == $name && $data[1] == $pass){
+            if($data[0] == $email && $data[1] == $pass){
                 if($valueOfuser == 1){
                     session_start();
                     $_SESSION["auth_admin"] = "true";
@@ -26,10 +26,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 }else if($valueOfuser == 2){
                     session_start();
                     $_SESSION["auth_user"] = "true";
-                    header('location:php_user_login/user_log.php');
+                    $_SESSION["user_name"] = "Shahid";
+                    header('location:index.php');
                 }
             }else{
-                $userName = $name;
+                $userEmail = $email;
                 $errorMsg1 = "Your Password is incorect";
             }
 
@@ -55,10 +56,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                     <h2 style="color: #0080c0; margin-top: -5px;">Sign In</h2>
                     <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
-                            <h3>User name</h3>
+                            <h3>Your Email</h3>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input type="text" class="form-control" placeholder="User_name" name="name" value=<?=$userName; ?>>
+                                <input type="email" class="form-control" placeholder="Your_Email" name="email" value=<?=$userEmail; ?>>
                             </div>
                             <p class="text-danger"><strong><?=$errorMsg; ?></strong></p>
                         </div>
