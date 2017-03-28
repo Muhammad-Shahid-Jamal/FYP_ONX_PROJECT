@@ -8,7 +8,7 @@
     $logoutBtn="";
     $userName="My Account";
     $hoverSignUp = "<div class=\"hoverBox\">".
-                   "<h2 class=\"text-center\"><a href=\"_signup.html\" style=\"text-decoration:none; color:white;\">Sign Up</a></h2>".
+                   "<h2 class=\"text-center\"><a href=\"_signup.php\" style=\"text-decoration:none; color:white;\">Sign Up</a></h2>".
                    "</div>";
     if(!isset($_SESSION["auth_user"])){
         $_SESSION["auth_user"]="false";

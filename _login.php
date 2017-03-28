@@ -13,6 +13,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $user = new User($email,$pass);
             $data = $myDb->checkUser($user);
             $valueOfuser = $myDb->userFrom($email);
+            $userName = $myDb->getUserName($email);
             echo $valueOfuser;
             if($data == FALSE){
                 $errorMsg = "Your Email is incorect *";
@@ -26,10 +27,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 }else if($valueOfuser == 2){
                     session_start();
                     $_SESSION["auth_user"] = "true";
-                    $_SESSION["user_name"] = "Shahid";
+                    $_SESSION["user_name"] = $userName;
                     header('location:index.php');
                 }
             }else{
+                session_start();
+                session_unset();
+                session_destroy();
                 $userEmail = $email;
                 $errorMsg1 = "Your Password is incorect";
             }

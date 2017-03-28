@@ -71,6 +71,20 @@ class DBaseHelper{
 
     }
 
+    public function getUserName($useremail){
+        $userName="";
+        $query = "select _user from newusers where _email='$useremail'";
+        $result=$this->connection->query($query);
+        while($row=$result->fetch_assoc()){
+            $userName = $row["_user"];
+        }
+        if($userName != ""){
+            return $userName;
+        }else{
+            return FALSE;
+        }
+    }
+
     public function disconnect(){
         $this->connection->close();
     }
