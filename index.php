@@ -153,9 +153,9 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="categ2">
+        <!--<div class="container" id="categ2">
             <!--next Categoerie for md and lg-->
-            <div class="row">
+            <!--<div class="row">
                 <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
                     <img src="images/icons/pet.png">
                     <h3>Pets</h3>
@@ -172,8 +172,8 @@
                     <img src="images/icons/prop.png">
                     <h3>Properties</h3>
                 </div>
-            </div>
-        </div>
+            </div>-->
+        <!--</div>-->
         <!--Footer-->
         <footer class="container-fluid footer">
             <div class="raw" style="margin-top:20px;">

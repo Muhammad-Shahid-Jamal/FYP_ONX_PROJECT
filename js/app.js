@@ -19,40 +19,6 @@ $(document).ready(function(){
     },6000);
 //end of slider function
     
-//for categories up and down show start 
-$("#next").on("click",function(){
-    $("#categ2").show();
-    $("#cattab").animate({
-        opacity:"0",
-        right:"95%",
-        // visibility:"hidden"
-    },2000);
-    $("#categ2").animate({
-        opacity:"1",
-        left:"90px"
-    },3000);
-
-    $(this).fadeOut(2000);
-    $("#prev").fadeIn(3000);
-});       
-
-$("#prev").on("click",function(){
-    $("#categ2").animate({
-        opacity:"0",
-        left:"95%"
-    },2000,function(){
-        $("#categ2").hide();
-    });
-    $("#cattab").animate({
-        opacity:"1",
-        right:"0%"
-    },3000);
-
-    $(this).fadeOut(3000);
-    $("#next").fadeIn(2000);
-
-});
-    
 //checking the feedback form
     formInputCheck();
 });
@@ -92,3 +58,36 @@ function checkCIField(){
         return -1;
     }
 }
+//for categories up and down show start 
+// $("#next").on("click",function(){
+//     $("#categ2").show();
+//     $("#cattab").animate({
+//         opacity:"0",
+//         right:"95%",
+//         // visibility:"hidden"
+//     },2000);
+//     $("#categ2").animate({
+//         opacity:"1",
+//         left:"90px"
+//     },3000);
+
+//     $(this).fadeOut(2000);
+//     $("#prev").fadeIn(3000);
+// });       
+
+// $("#prev").on("click",function(){
+//     $("#categ2").animate({
+//         opacity:"0",
+//         left:"95%"
+//     },2000,function(){
+//         $("#categ2").hide();
+//     });
+//     $("#cattab").animate({
+//         opacity:"1",
+//         right:"0%"
+//     },3000);
+
+//     $(this).fadeOut(3000);
+//     $("#next").fadeIn(2000);
+
+// });

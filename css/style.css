@@ -171,15 +171,14 @@
 }
 
 #cattab{
-    position: relative;
 }
 
 #categ2 {
-    position: absolute;
+    /*position: absolute;
     top: 790px;
     left: 95%;
     opacity: 0;
-    display: none;
+    display: none;*/
     /*position: relative;
     top: -300px;
     visibility: hidden;*/
