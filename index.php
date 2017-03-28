@@ -13,7 +13,7 @@
     if(!isset($_SESSION["auth_user"])){
         $_SESSION["auth_user"]="false";
     }else{
-        if($_SESSION["auth_user"]){
+        if($_SESSION["auth_user"]=="true"){
             $_SESSION["welcome"]="false";
             $logoutBtn = "<li class=\"select\"><a href=\"php_user_login/user_logout.php\"><span class=\"glyphicon glyphicon-off\"></span> Logout</a></li>";
             $userName=$_SESSION["user_name"];
@@ -22,6 +22,8 @@
     }
     //checking condition of form of feedback
     if($_POST){
+        session_unset();
+        session_destroy();
         if(!empty($_POST["nameOfUserFeed"]) && !empty($_POST["emailOfUserFeed"]) && !empty($_POST["msgOfUserFeed"])){
             mysql_select_db("onx_management_dbase");
             $name = checkInput($_POST["nameOfUserFeed"]);
