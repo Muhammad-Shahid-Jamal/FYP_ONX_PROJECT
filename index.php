@@ -14,6 +14,7 @@
         $_SESSION["auth_user"]="false";
     }else{
         if($_SESSION["auth_user"]){
+            $_SESSION["welcome"]="false";
             $logoutBtn = "<li class=\"select\"><a href=\"php_user_login/user_logout.php\"><span class=\"glyphicon glyphicon-off\"></span> Logout</a></li>";
             $userName=$_SESSION["user_name"];
             $hoverSignUp="";

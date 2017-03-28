@@ -18,7 +18,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     session_start();
                     $_SESSION["auth_user"] = "true";
                     $_SESSION["user_name"] = $userName;
-                    header('location:index.php');
+                    $_SESSION["welcome"] = "true";
+                    header('location:php_user_login/welcome_user.php');
         }else{
             session_start();
             session_unset();
