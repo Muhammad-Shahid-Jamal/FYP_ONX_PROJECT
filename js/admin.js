@@ -13,7 +13,6 @@ jQuery(document).ready(function($){
             success: function(data){
                 userFeed = true;
                 var myResponseData = JSON.parse(data);
-                console.log(myResponseData);
                 for(var i=0;i<myResponseData.length;i++){
                     var $mainDiv =$("<div></div>");
                     var $myRow = $("<div></div>");

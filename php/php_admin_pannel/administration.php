@@ -40,36 +40,9 @@ if(!$_SESSION["auth_admin"]){
         <br>
         <br>
         <div class="container text-center" id="main-contain">
-            <!--<div class="row user-feed">
-                <div class="col-md-12 col-lg-12 text-left">
-                    <h5><strong>Name:</strong>Shahid </h5>
-                    <h5><strong>Email:</strong> abc@gmail.com</h5>
-                    <h5><strong>Feedback:</strong> kajfksdfjsdkfjsdjf</h5>
-                </div>
-            </div>
-
-            <div class="row user-feed">
-                <div class="col-md-12 col-lg-12 text-left">
-                    <h5><strong>Name:</strong>Shahid </h5>
-                    <h5><strong>Email:</strong> abc@gmail.com</h5>
-                    <h5><strong>Feedback:</strong> kajfksdfjsdkfjsdjf</h5>
-                </div>
-            </div>-->
+            <!--feed back or other details goes here-->
         </div>
         <script src="../../js/jquery-3.1.1.min.js"></script>
         <script src="../../js/admin.js"></script>
     </body>
 </html>
-
-<!--<?php
-    //  header("Content-Type: text/javascript charset=UTF-8");
-    // class User{
-    //     public $name;
-    //     public $email;
-    // }
-    
-    // $user1 = new User();
-    // $user1->name="shahid";
-    // $user1->email="abcdfsd";
-    // echo json_encode($user1);
-?>-->
