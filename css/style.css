@@ -113,7 +113,8 @@
     height: 300px;
     background-image: url(../images/catBack.png);
     background-repeat: no-repeat;
-    background-position-y: 120px;
+    background-position-y: 115px;
+    overflow: hidden;
 }
 
 .left-btn {
@@ -146,12 +147,15 @@
 .arrows {
     position: relative;
     top: 150px;
+    z-index: 1;
 }
 
 .arrow-anim {
 	color: #0080c0;
     animation: arrowAnim 2s infinite;
     cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px #0080c0;
 }
 .arrow-anim:hover {
 	animation: none;
@@ -185,8 +189,6 @@
     /*top: -300px;
     left: 100%;*/
 }
-
-
 /*this class for test purposes*/
 .test {
     margin: 20px 0px 0px 0px;
@@ -194,4 +196,16 @@
 
 .test1 {
     background-color: red;
+}
+
+
+
+
+
+.md-cat {
+    position: relative;
+}
+
+.cat-icons {
+    margin: 0px auto 0px auto;
 }

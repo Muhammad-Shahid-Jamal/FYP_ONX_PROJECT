@@ -95,85 +95,83 @@
             <?php echo $hoverSignUp; ?>
         </div>
         <!--heading of categories-->
-        <div class="visible-sm visible-xs container text-center categ-sm">
+        <div class="visible-xs container text-center categ-sm">
             <h1>Categories</h1>
         </div>
-        <div class="visible-lg visible-md container text-center categ">
+        <div class="visible-lg visible-md visible-sm container text-center categ">
             <h1>Categories</h1>
         </div>
         <!--arrows < > -->
-        <div class="visible-lg visible-md container-fluid arrows">
+        <div class="visible-lg visible-md visible-sm container-fluid arrows">
             <div class="raw">
-                <div class="col-md-2 col-lg-2 text-left">
+                <div class="col-sm-6 col-md-6 col-lg-6 text-left">
                     <h1><span class="glyphicon glyphicon-chevron-left arrow-anim" id="prev"></span></h1>
                 </div>
-                <div class="col-lg-push-8 col-md-push-8 col-md-2 col-lg-2 text-right">
+                <div class="col-sm-6 col-md-6 col-lg-6 text-right">
                     <h1><span class="glyphicon glyphicon-chevron-right arrow-anim" id="next"></span></h1>
                 </div>
             </div>
         </div>
-        <!--Categories all-->
-        <div class="container" id="cattab">
+<!------this is for md and lg and sm screen sizes later will be modified-->
+        <div class="container cat visible-md visible-lg visible-sm">
+            <div class="row md-cat">
+                <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+                    <img src="images/icons/mob.png" alt="Mobile Icon" class="img-responsive cat-icons">
+                    <a href="#" class="h3" style="text-decoration:none; display:inline-block;">Mobile</a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+                    <img src="images/icons/car.png" alt="Car Icon" class="img-responsive cat-icons">
+                    <a href="#" class="h3" style="text-decoration:none; display:block;">Cars</a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+                    <img src="images/icons/bikes.png" alt="Bikes" class="img-responsive cat-icons">
+                    <a href="#" class="h3" style="text-decoration:none; display:block;">Bike</a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 text-center">
+                    <img src="images/icons/elec.png" alt="electronic item icon" class="img-responsive cat-icons">
+                    <a href="#" class="h3" style="text-decoration:none; display:block;">Electronic Item</a>
+                </div>
+            </div>
+        </div>
+<!------this is for small screens only latter will be modified through js but this time cary on-->
+        <div class="container visible-xs">
         <!--landing page categorie-->
             <div class="row" id="categ1">
-                <div class="col-md-3 col-lg-3 cat text-center">
+                <div class="cat text-center">
                     <img src="images/icons/mob.png" alt="mobile pic">
                     <h3>Mobile</h3>
                 </div>
-                <div class="col-md-3 col-lg-3 cat text-center">
+                <div class="cat text-center">
                     <img src="images/icons/car.png" alt="Car Icon">
                     <h3>Cars</h3>
                 </div>
-                <div class="col-md-3 col-lg-3 cat text-center">
+                <div class="cat text-center">
                     <img src="images/icons/bikes.png" alt="Bikes">
                     <h3>Bike</h3>
                 </div>
-                <div class="col-md-3 col-lg-3 cat text-center">
+                <div class="cat text-center">
                     <img src="images/icons/elec.png" alt="electronic item icon">
                     <h3>Electronic Item</h3>
                 </div>
-            </div>
                 <!--Next Categ for small screens always visible-->
-            <div class="raw">
-                <div class="visible-sm visible-xs text-center cat">
+                <div class="text-center cat">
                     <img src="images/icons/pet.png">
                     <h3>Pets</h3>
                 </div>
-                <div class="visible-sm visible-xs text-center cat">
+                <div class="text-center cat">
                     <img src="images/icons/furn.png">
                     <h3>Furneture</h3>
                 </div>
-                <div class="visible-sm visible-xs text-center cat">
+                <div class="text-center cat">
                     <img src="images/icons/kids.png">
                     <h3>Kids</h3>
                 </div>
-                <div class="visible-sm visible-xs text-center cat">
+                <div class="text-center cat">
                     <img src="images/icons/prop.png">
                     <h3>Properties</h3>
                 </div>
             </div>
         </div>
-        <!--<div class="container" id="categ2">
-            <!--next Categoerie for md and lg-->
-            <!--<div class="row">
-                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
-                    <img src="images/icons/pet.png">
-                    <h3>Pets</h3>
-                </div>
-                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
-                    <img src="images/icons/furn.png">
-                    <h3>Furneture</h3>
-                </div>
-                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
-                    <img src="images/icons/kids.png">
-                    <h3>Kids</h3>
-                </div>
-                <div class="visible-md visible-lg col-md-3 col-lg-3 cat text-center">
-                    <img src="images/icons/prop.png">
-                    <h3>Properties</h3>
-                </div>
-            </div>-->
-        <!--</div>-->
         <!--Footer-->
         <footer class="container-fluid footer">
             <div class="raw" style="margin-top:20px;">

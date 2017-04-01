@@ -18,7 +18,17 @@ $(document).ready(function(){
         }
     },6000);
 //end of slider function
+    $("#next").on("click",function(){
+        catAnim.slida();
+        $("#prev").fadeIn(2000);
+        $(this).fadeOut("slow");
+    });
     
+    $("#prev").on("click",function(){
+        catAnim.slidB();
+        $("#next").fadeIn(2000);
+        $(this).fadeOut("slow");
+    });
 //checking the feedback form
     formInputCheck();
 });
@@ -58,36 +68,54 @@ function checkCIField(){
         return -1;
     }
 }
-//for categories up and down show start 
-// $("#next").on("click",function(){
-//     $("#categ2").show();
-//     $("#cattab").animate({
-//         opacity:"0",
-//         right:"95%",
-//         // visibility:"hidden"
-//     },2000);
-//     $("#categ2").animate({
-//         opacity:"1",
-//         left:"90px"
-//     },3000);
-
-//     $(this).fadeOut(2000);
-//     $("#prev").fadeIn(3000);
-// });       
-
-// $("#prev").on("click",function(){
-//     $("#categ2").animate({
-//         opacity:"0",
-//         left:"95%"
-//     },2000,function(){
-//         $("#categ2").hide();
-//     });
-//     $("#cattab").animate({
-//         opacity:"1",
-//         right:"0%"
-//     },3000);
-
-//     $(this).fadeOut(3000);
-//     $("#next").fadeIn(2000);
-
-// });
+//categorie animation and icons and text changing object
+var catAnim = {
+    imageSrc_main:[
+        "images/icons/mob.png",
+        "images/icons/car.png",
+        "images/icons/bikes.png",
+        "images/icons/elec.png",
+        "images/icons/pet.png",
+        "images/icons/furn.png",
+        "images/icons/kids.png",
+        "images/icons/prop.png"],
+    slida:function(){
+        $(".md-cat").animate({
+            opacity:"0",
+            left:"-110%"
+        },1500,function(){
+            $(".md-cat").css({"left":"110%"});
+            catAnim.changeIconsAndText(0,catAnim.imageSrc_main[4],"Pet Icon",1,"Pets");
+            catAnim.changeIconsAndText(2,catAnim.imageSrc_main[5],"Furneture Icon",3,"Furneture");
+            catAnim.changeIconsAndText(4,catAnim.imageSrc_main[6],"Kids Icon",5,"Kids");
+            catAnim.changeIconsAndText(6,catAnim.imageSrc_main[7],"Prop Icon",7,"Properties");
+            $(".md-cat").animate({
+                opacity:"1",
+                left:"0%"
+            },1200);
+        });
+    },
+    slidB:function(){
+        $(".md-cat").animate({
+            opacity:"0",
+            left:"110%"
+        },1500,function(){
+            $(".md-cat").css({"left":"-110%"});
+            catAnim.changeIconsAndText(0,catAnim.imageSrc_main[0],"Mobile Icon",1,"Mobiles");
+            catAnim.changeIconsAndText(2,catAnim.imageSrc_main[1],"Car Icon",3,"Cars");
+            catAnim.changeIconsAndText(4,catAnim.imageSrc_main[2],"Bike Icon",5,"Bike");
+            catAnim.changeIconsAndText(6,catAnim.imageSrc_main[3],"Elec Icon",7,"Electronic Item");
+            $(".md-cat").animate({
+                opacity:"1",
+                left:"0%"
+            },1200);
+        });
+    },
+    changeIconsAndText:function(imageRef,imageSrc,imageAlt,hyperRef,hyperText){
+        var mainChilds = $(".md-cat").children();
+        var inMainChilds = mainChilds.children();
+        inMainChilds[imageRef].src = imageSrc;
+        inMainChilds[imageRef].alt = imageAlt;
+        inMainChilds[hyperRef].text = hyperText;
+    }
+};
