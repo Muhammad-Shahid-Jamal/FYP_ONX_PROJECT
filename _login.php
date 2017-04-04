@@ -12,32 +12,31 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $myDb = new DBaseHelper();
             $user = new User($email,$pass);
             $data = $myDb->checkUser($user);
-            $valueOfuser = $myDb->userFrom($email);
-            $userName = $myDb->getUserName($email);
-            echo $valueOfuser;
+            
             if($data == FALSE){
                 $errorMsg = "Your Email is incorect *";
                 $userEmail = $email;
-            }
-            if($data[0] == $email && $data[1] == $pass){
-                if($valueOfuser == 1){
-                    session_start();
-                    $_SESSION["auth_admin"] = "true";
-                    header('location:php/php_admin_pannel/administration.php');
-                }else if($valueOfuser == 2){
-                    session_start();
-                    $_SESSION["auth_user"] = "true";
-                    $_SESSION["user_name"] = $userName;
-                    header('location:index.php');
-                }
             }else{
-                session_start();
-                session_unset();
-                session_destroy();
-                $userEmail = $email;
-                $errorMsg1 = "Your Password is incorect";
-            }
-
+                if($data[1] == $email && $data[2] == $pass){
+                    if($data[3] == 1){
+                        session_start();
+                        $_SESSION["auth_admin"] = "true";
+                        header('location:php/php_admin_pannel/administration.php');
+                    }else if($data[3] == 2){
+                        session_start();
+                        $_SESSION["auth_user"] = "true";
+                        $_SESSION["user_name"] = $data[0];
+                        header('location:index.php');
+                    }
+                }else{
+                        session_start();
+                        session_unset();
+                        session_destroy();
+                        $userEmail = $email;
+                        $errorMsg1 = "Your Password is incorect";
+                    }    
+                }
+            
             $myDb->disconnect();        
         }
 }

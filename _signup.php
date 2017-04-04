@@ -11,10 +11,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($pass1 == $pass2){
         $myDb = new DBaseHelper();
         $con = $myDb->getConnection();
-        $queryOfNewUser = "INSERT INTO newusers VALUES('','$userName','$userEmail','$pass1')";
-        $querOfUsers = "INSERT INTO users VALUES('','$userEmail','$pass1')";
-        $queryOfTypeOfUsers = "INSERT INTO type_of_user VALUES('$userEmail',2)";
-        if($con->query($queryOfNewUser) && $con->query($querOfUsers) && $con->query($queryOfTypeOfUsers)){
+        $queryOfNewUser = "INSERT INTO users VALUES('','$userName','$userEmail','$pass1',2)";
+//        $querOfUsers = "INSERT INTO users VALUES('','$userEmail','$pass1')";
+//        $queryOfTypeOfUsers = "INSERT INTO type_of_user VALUES('$userEmail',2)";
+        if($con->query($queryOfNewUser)){
                     session_start();
                     $_SESSION["auth_user"] = "true";
                     $_SESSION["user_name"] = $userName;

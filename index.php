@@ -29,7 +29,7 @@
             $name = checkInput($_POST["nameOfUserFeed"]);
             $email = checkInput($_POST["emailOfUserFeed"]);
             $msg = checkInput($_POST["msgOfUserFeed"]);
-           $queryOfInsert = "INSERT INTO userfeed values('','$name','$email','$msg')";
+           $queryOfInsert = "INSERT INTO userfeed (_name, _email, _msg) values('$name','$email','$msg')";
            if(mysql_query($queryOfInsert,$conection)){
               echo("<script>alert('Thanks for Feedback');</script>");
            }else{

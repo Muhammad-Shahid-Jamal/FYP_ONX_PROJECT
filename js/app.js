@@ -19,13 +19,13 @@ $(document).ready(function(){
     },6000);
 //end of slider function
     $("#next").on("click",function(){
-        catAnim.slida();
+        CatAnim.slida();
         $("#prev").fadeIn(2000);
         $(this).fadeOut("slow");
     });
     
     $("#prev").on("click",function(){
-        catAnim.slidB();
+        CatAnim.slidB();
         $("#next").fadeIn(2000);
         $(this).fadeOut("slow");
     });
@@ -69,7 +69,7 @@ function checkCIField(){
     }
 }
 //categorie animation and icons and text changing object
-var catAnim = {
+var CatAnim = {
     imageSrc_main:[
         "images/icons/mob.png",
         "images/icons/car.png",
@@ -85,10 +85,10 @@ var catAnim = {
             left:"-110%"
         },1500,function(){
             $(".md-cat").css({"left":"110%"});
-            catAnim.changeIconsAndText(0,catAnim.imageSrc_main[4],"Pet Icon",1,"Pets");
-            catAnim.changeIconsAndText(2,catAnim.imageSrc_main[5],"Furneture Icon",3,"Furneture");
-            catAnim.changeIconsAndText(4,catAnim.imageSrc_main[6],"Kids Icon",5,"Kids");
-            catAnim.changeIconsAndText(6,catAnim.imageSrc_main[7],"Prop Icon",7,"Properties");
+            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[4],"Pet Icon",1,"Pets");
+            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[5],"Furneture Icon",3,"Furneture");
+            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[6],"Kids Icon",5,"Kids");
+            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[7],"Prop Icon",7,"Properties");
             $(".md-cat").animate({
                 opacity:"1",
                 left:"0%"
@@ -101,10 +101,10 @@ var catAnim = {
             left:"110%"
         },1500,function(){
             $(".md-cat").css({"left":"-110%"});
-            catAnim.changeIconsAndText(0,catAnim.imageSrc_main[0],"Mobile Icon",1,"Mobiles");
-            catAnim.changeIconsAndText(2,catAnim.imageSrc_main[1],"Car Icon",3,"Cars");
-            catAnim.changeIconsAndText(4,catAnim.imageSrc_main[2],"Bike Icon",5,"Bike");
-            catAnim.changeIconsAndText(6,catAnim.imageSrc_main[3],"Elec Icon",7,"Electronic Item");
+            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[0],"Mobile Icon",1,"Mobiles");
+            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[1],"Car Icon",3,"Cars");
+            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[2],"Bike Icon",5,"Bike");
+            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[3],"Elec Icon",7,"Electronic Item");
             $(".md-cat").animate({
                 opacity:"1",
                 left:"0%"

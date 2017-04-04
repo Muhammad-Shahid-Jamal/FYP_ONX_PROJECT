@@ -30,7 +30,8 @@ if(!$_SESSION["auth_admin"]){
 
             <div class="collapse navbar-collapse" id="mynav">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" id="showfeed">Show Feedback</a></li>
+                    <li><a href="../php_files/feedback.php" id="showfeed">Show Feedback</a></li>
+                    <li><a href="../php_files/users.php" id="showUsers">Show Users</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
@@ -43,6 +44,7 @@ if(!$_SESSION["auth_admin"]){
             <!--feed back or other details goes here-->
         </div>
         <script src="../../js/jquery-3.1.1.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
         <script src="../../js/admin.js"></script>
     </body>
 </html>
