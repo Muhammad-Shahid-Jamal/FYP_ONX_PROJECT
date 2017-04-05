@@ -91,7 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <input type="submit" value="SignUp" class="btn btn-primary" id="submitbtn">
                         </div>
                     </form>
-                    <p class="text-warning"><strong>Already Registerd ?</strong><a href="#"> Click here</a></p>
+                    <p class="text-warning"><strong>Already Registerd ?</strong><a href="_login.php"> Click here</a></p>
                 </div>
             </div>
         </div>
