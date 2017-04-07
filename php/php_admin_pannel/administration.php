@@ -43,6 +43,17 @@ if(!$_SESSION["auth_admin"]){
         <div class="container text-center" id="main-contain">
             <!--feed back or other details goes here-->
         </div>
+<!--
+        <div id="prompt-box">
+            <div id="my-box">
+                <div class="text-center">
+                    <h4>Are You Sure You Want to Delete This Record?</h4>
+                    <button class="btn btn-danger" id="dYes">Yes</button>
+                    <button class="btn btn-default" id="dNo">No</button>
+                </div>
+            </div>
+        </div>
+-->
         <script src="../../js/jquery-3.1.1.min.js"></script>
         <script src="../../js/bootstrap.min.js"></script>
         <script src="../../js/admin.js"></script>

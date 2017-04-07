@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+//    $("#my-box").slideDown(800);
     var userFeed = false;
     var users = false;
     $("#showfeed").on("click",function(e){
@@ -17,6 +18,43 @@ jQuery(document).ready(function($){
             success: function(data){
                 userFeed = true;
                 users = false;
+                //popup box
+                var parentcheck=null;
+                var pbh4 = $("<h4></h4>");
+                pbh4.text("Are You Sure You Want to Delete This Record ?");
+                var pbtn = [$("<button></button>"),$("<button></button>")];
+                pbtn[0].addClass("btn btn-danger");
+                pbtn[0].text("Yes");
+                pbtn[0].on("click",function(){
+                    if(parentcheck !== null){
+                        testing(parentcheck);
+                        $("#prompt-box").remove();
+                        console.log(parentcheck);
+                        parentcheck = null;
+                    }else{
+                        console.log("nothing hapend");
+                    }
+                });
+                pbtn[1].addClass("btn btn-default");
+                pbtn[1].text("No");
+                pbtn[1].css({"marginLeft":"10px"});
+                pbtn[1].on("click",function(){
+                    $("#prompt-box").remove();
+                });
+                var tcenter = $("<div></div>");
+                tcenter.addClass("text-center");
+                tcenter.append(pbh4);
+                tcenter.append(pbtn[0]);
+                tcenter.append(pbtn[1]);
+                var promptDiv = $("<div></div>");
+                promptDiv.attr("id","prompt-box");
+                var myBox = $("<div></div>");
+                myBox.attr("id","my-box");
+                myBox.append(tcenter);
+                promptDiv.append(myBox);
+                //end of popup work
+//                $("#main-contain").after(promptDiv);
+//                myBox.slideDown("slow");
                 var myResponseData = JSON.parse(data);
                // console.log(myResponseData);
                 for(var i=0;i<myResponseData.length;i++){
@@ -27,9 +65,18 @@ jQuery(document).ready(function($){
                     $myRow.addClass("col-md-6 col-lg-6 col-sm-6 text-left");
                     $myRow2.addClass("col-md-6 col-lg-6 col-sm-6 text-right");
                     var $h1 = $("<h1></h1>");
-                    $h1.attr("id",myResponseData[i]._id);
+                    $mainDiv.attr("id",myResponseData[i]._id);
                     var $span = $("<span></span>");
                     $span.addClass("glyphicon glyphicon-trash");
+                    //span trash icon click function
+                    $span.on("click",function(){
+                        var parent=$(this).parent().parent().parent();
+//                        parent.remove();
+                        $("#main-contain").after(promptDiv);
+                        myBox.slideDown("slow");
+                        parentcheck = parent.attr("id");
+//                        console.log(parent);
+                    });
                     $h1.append($span);
                     $myRow2.append($h1);
                     var $h5 = [$("<h5></h5>"),$("<h5></h5>"),$("<h5></h5>")];
@@ -88,3 +135,8 @@ jQuery(document).ready(function($){
         }
     });
 });
+
+function testing(x){
+    var id = x;
+    $("#"+id).remove();
+}
