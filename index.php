@@ -75,7 +75,7 @@
                 <div class="collapse navbar-collapse" id="myNav">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="select"><a href="_login.php"><span class="glyphicon glyphicon-user"></span> <?= $userName;?></a></li>
-                        <li class="select"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Submit Add</a></li>
+                        <li class="select"><a href="_postad.html"><span class="glyphicon glyphicon-log-in"></span> Submit Ad</a></li>
                         <?php echo $logoutBtn; ?>
                     </ul>
                 </div>
@@ -117,19 +117,19 @@
             <div class="row md-cat">
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/mob.png" alt="Mobile Icon" class="img-responsive cat-icons">
-                    <a href="#" class="h3" style="text-decoration:none; display:inline-block;">Mobile</a>
+                    <a href="_categ.php?categ=mobile" class="h3" style="text-decoration:none; display:inline-block;">Mobile</a>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/car.png" alt="Car Icon" class="img-responsive cat-icons">
-                    <a href="#" class="h3" style="text-decoration:none; display:block;">Cars</a>
+                    <a href="_categ.php?categ=cars" class="h3" style="text-decoration:none; display:block;">Cars</a>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/bikes.png" alt="Bikes" class="img-responsive cat-icons">
-                    <a href="#" class="h3" style="text-decoration:none; display:block;">Bike</a>
+                    <a href="_categ.php?categ=bikes" class="h3" style="text-decoration:none; display:block;">Bike</a>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/elec.png" alt="electronic item icon" class="img-responsive cat-icons">
-                    <a href="#" class="h3" style="text-decoration:none; display:block;">Electronic Item</a>
+                    <a href="_categ.php?categ=electronic" class="h3" style="text-decoration:none; display:block;">Electronic Item</a>
                 </div>
             </div>
         </div>

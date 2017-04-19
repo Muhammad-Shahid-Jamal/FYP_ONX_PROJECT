@@ -79,16 +79,25 @@ var CatAnim = {
         "images/icons/furn.png",
         "images/icons/kids.png",
         "images/icons/prop.png"],
+    cate_src:[
+        "_categ.php?categ=mobile",
+        "_categ.php?categ=cars",
+        "_categ.php?categ=bikes",
+        "_categ.php?categ=electronic",
+        "_categ.php?categ=pet",
+        "_categ.php?categ=furn",
+        "_categ.php?categ=kids",
+        "_categ.php?categ=prop"],
     slida:function(){
         $(".md-cat").animate({
             opacity:"0",
             left:"-110%"
         },1500,function(){
             $(".md-cat").css({"left":"110%"});
-            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[4],"Pet Icon",1,"Pets");
-            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[5],"Furneture Icon",3,"Furneture");
-            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[6],"Kids Icon",5,"Kids");
-            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[7],"Prop Icon",7,"Properties");
+            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[4],"Pet Icon",1,"Pets",CatAnim.cate_src[4]);
+            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[5],"Furneture Icon",3,"Furneture",CatAnim.cate_src[5]);
+            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[6],"Kids Icon",5,"Kids",CatAnim.cate_src[6]);
+            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[7],"Prop Icon",7,"Properties",CatAnim.cate_src[7]);
             $(".md-cat").animate({
                 opacity:"1",
                 left:"0%"
@@ -101,21 +110,22 @@ var CatAnim = {
             left:"110%"
         },1500,function(){
             $(".md-cat").css({"left":"-110%"});
-            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[0],"Mobile Icon",1,"Mobiles");
-            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[1],"Car Icon",3,"Cars");
-            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[2],"Bike Icon",5,"Bike");
-            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[3],"Elec Icon",7,"Electronic Item");
+            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[0],"Mobile Icon",1,"Mobiles",CatAnim.cate_src[0]);
+            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[1],"Car Icon",3,"Cars",CatAnim.cate_src[1]);
+            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[2],"Bike Icon",5,"Bike",CatAnim.cate_src[2]);
+            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[3],"Elec Icon",7,"Electronic Item",CatAnim.cate_src[3]);
             $(".md-cat").animate({
                 opacity:"1",
                 left:"0%"
             },1200);
         });
     },
-    changeIconsAndText:function(imageRef,imageSrc,imageAlt,hyperRef,hyperText){
+    changeIconsAndText:function(imageRef,imageSrc,imageAlt,hyperRef,hyperText,hyperLink){
         var mainChilds = $(".md-cat").children();
         var inMainChilds = mainChilds.children();
         inMainChilds[imageRef].src = imageSrc;
         inMainChilds[imageRef].alt = imageAlt;
         inMainChilds[hyperRef].text = hyperText;
+        inMainChilds[hyperRef].href = hyperLink;
     }
 };
