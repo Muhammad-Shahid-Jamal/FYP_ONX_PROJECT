@@ -2,7 +2,9 @@
 $categ="";
 if(isset($_GET["categ"])){
     switch($_GET["categ"]){
-        case "mobile":$categ="Mobile";
+        case "mobile":
+            $categ="Mobile";
+            $querym="select * from mobiles";
             break;
         case "cars":$categ="Cars";
             break;
@@ -10,6 +12,8 @@ if(isset($_GET["categ"])){
             break;
         default: $categ="no Match";
     }
+}else{
+    header("location:index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -51,6 +55,7 @@ if(isset($_GET["categ"])){
         <div class="container">
             <img src="images/icons/mob.png" class="img-responsive img-responsive-sm">
             <h1><?=$categ?></h1>
+            <h2><?=$querym?></h2>
         </div>
 <!--
         <div class="container">

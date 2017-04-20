@@ -117,7 +117,7 @@
             <div class="row md-cat">
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/mob.png" alt="Mobile Icon" class="img-responsive cat-icons">
-                    <a href="_categ.php?categ=mobile" class="h3" style="text-decoration:none; display:inline-block;">Mobile</a>
+                    <a href="_categ.php?categ=mobile" class="h3" style="text-decoration:none; display:block;">Mobile</a>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/car.png" alt="Car Icon" class="img-responsive cat-icons">
@@ -139,36 +139,36 @@
             <div class="row" id="categ1">
                 <div class="cat text-center">
                     <img src="images/icons/mob.png" alt="mobile pic">
-                    <h3>Mobile</h3>
+                    <a href="_categ.php?categ=mobile" class="h3" style="text-decoration:none; display:block;">Mobile</a>
                 </div>
                 <div class="cat text-center">
                     <img src="images/icons/car.png" alt="Car Icon">
-                    <h3>Cars</h3>
+                    <a href="_categ.php?categ=cars" class="h3" style="text-decoration:none; display:block;">Cars</a>
                 </div>
                 <div class="cat text-center">
                     <img src="images/icons/bikes.png" alt="Bikes">
-                    <h3>Bike</h3>
+                    <a href="_categ.php?categ=bikes" class="h3" style="text-decoration:none; display:block;">Bike</a>
                 </div>
                 <div class="cat text-center">
                     <img src="images/icons/elec.png" alt="electronic item icon">
-                    <h3>Electronic Item</h3>
+                    <a href="_categ.php?categ=electronic" class="h3" style="text-decoration:none; display:block;">Electronic Item</a>
                 </div>
                 <!--Next Categ for small screens always visible-->
                 <div class="text-center cat">
                     <img src="images/icons/pet.png">
-                    <h3>Pets</h3>
+                    <a href="_categ.php?categ=pet" class="h3" style="text-decoration:none; display:block;">Pets</a>
                 </div>
                 <div class="text-center cat">
                     <img src="images/icons/furn.png">
-                    <h3>Furneture</h3>
+                    <a href="_categ.php?categ=furn" class="h3" style="text-decoration:none; display:block;">Furniture</a>
                 </div>
                 <div class="text-center cat">
                     <img src="images/icons/kids.png">
-                    <h3>Kids</h3>
+                    <a href="_categ.php?categ=kids" class="h3" style="text-decoration:none; display:block;">Kids</a>
                 </div>
                 <div class="text-center cat">
                     <img src="images/icons/prop.png">
-                    <h3>Properties</h3>
+                    <a href="_categ.php?categ=prop" class="h3" style="text-decoration:none; display:block;">Properties</a>
                 </div>
             </div>
         </div>
