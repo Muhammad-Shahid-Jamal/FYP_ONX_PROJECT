@@ -81,7 +81,7 @@ if(isset($_GET["categ"])){
         <div class="container adblock">
             <div class="row">
                 <div class="col-sm-2 col-md-2 col-lg-2">
-                    <img src="images/slider/sl1.jpg" class="img-thumbnail">
+                    <img src="images/userupload/mobiles/nokia-220.jpg" class="img-thumbnail">
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <a class="h1 ad" href="#">Out Class Mobile in Cheap Price</a>
