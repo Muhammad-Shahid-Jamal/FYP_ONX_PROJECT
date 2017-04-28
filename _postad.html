@@ -53,16 +53,16 @@
                		</div>
                 	<div class="col-md-6 col-sm-6 col-lg-6">
                 		
-                        	<select class="form-control" name="Category">
+                        	<select class="form-control" name="Category" id="catSelect">
          						<option label="" style="display:none;">Choose</option>
-                                <option value="1">Mobiles</option>
-                                <option value="2">Cars</option>
-                                <option value="3">Bikes</option>
-                                <option value="4">Electronic Items</option>
-                                <option value="5">Pets</option>
-                                <option value="6">Furnitures</option>
-                                <option value="7">Kids</option>
-                                <option value="8">Property</option>
+                                <option value="mob">Mobiles</option>
+                                <option value="car">Cars</option>
+                                <option value="bik">Bikes</option>
+                                <option value="elec">Electronic Items</option>
+                                <option value="pet">Pets</option>
+                                <option value="fur">Furnitures</option>
+                                <option value="kid">Kids</option>
+                                <option value="pro">Property</option>
                             </select>
                 	</div>
                 </div>
@@ -71,8 +71,13 @@
                 		<h4>Price<span class="text-danger">*</span></h4>
                		</div>
                 	<div class="col-md-2 col-sm-2 col-lg-2">
-                    	<span class="Ad_Price">Rs</span>
-                		<input type="text" class="form-control"/>
+<!--                    	<span class="Ad_Price">Rs</span>-->
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                Rs
+                            </span>
+                            <input type="text" class="form-control" placeholder="00000"/>
+                        </div>
                 		
                     </div>
                 </div>

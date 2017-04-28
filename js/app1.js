@@ -17,12 +17,15 @@ $(document).ready(function(){
 
         if(y > 600){
             $("#onxNav").css({
-                'opacity':'0'
+                'opacity':'0',
+                'z-index':'-1'
             });
         }else{
             $("#onxNav").css({
-                'opacity':'1'
+                'opacity':'1',
+                'z-index':'10'
             });
         }
     });
+    
 });

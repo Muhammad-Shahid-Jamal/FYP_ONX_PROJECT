@@ -7,6 +7,8 @@
     session_start();
     $logoutBtn="";
     $userName="My Account";
+    $myFeedBack = "";
+    $toastBox="";
     $hoverSignUp = "<div class=\"hoverBox\">".
                    "<h2 class=\"text-center\"><a href=\"_signup.php\" style=\"text-decoration:none; color:white;\">Sign Up</a></h2>".
                    "</div>";
@@ -31,7 +33,15 @@
             $msg = checkInput($_POST["msgOfUserFeed"]);
            $queryOfInsert = "INSERT INTO userfeed (_name, _email, _msg) values('$name','$email','$msg')";
            if(mysql_query($queryOfInsert,$conection)){
-              echo("<script>alert('Thanks for Feedback');</script>");
+                $toastBox="<div id=\"mainToast\">"
+                            ."<div id=\"toastM\">"
+                                ."<h3>Thanks For Your Feedback</h3>"
+                            ."</div>"
+                          ."</div>";
+              $myFeedBack = "setTimeout(myToastR,8000);"
+                           ."function myToastR(){"
+                           ."$(\"#mainToast\").remove();"
+                           ."}";
            }else{
              echo("<script>alert('something went Wrong!');</script>");
            }
@@ -183,7 +193,7 @@
                         </div>
                         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-center">
                             <h5 style="color:white;">Terms Of Use</h5>
-                            <h4 style="color:white;"><span class="glyphicon glyphicon-chevron-down"></span></h4>
+                            <h4 style="color:white;" id="testing"><span class="glyphicon glyphicon-chevron-down"></span></h4>
                         </div>
                         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
                             <h5 style="color:white;">Follow Us</h5>
@@ -219,7 +229,11 @@
                 </div>
             </div>
         </footer>
+        <?php echo $toastBox; ?>
         <script src="js/app.js" type="text/javascript"></script>
         <script src="js/app1.js"></script>
+        <script type="text/javascript">
+            <?php echo $myFeedBack; ?>
+        </script>
     </body>
 </html>

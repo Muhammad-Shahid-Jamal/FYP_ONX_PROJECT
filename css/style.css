@@ -174,21 +174,6 @@
 	display: none;
 }
 
-#cattab{
-}
-
-#categ2 {
-    /*position: absolute;
-    top: 790px;
-    left: 95%;
-    opacity: 0;
-    display: none;*/
-    /*position: relative;
-    top: -300px;
-    visibility: hidden;*/
-    /*top: -300px;
-    left: 100%;*/
-}
 /*this class for test purposes*/
 .test {
     margin: 20px 0px 0px 0px;
@@ -208,4 +193,30 @@
 
 .cat-icons {
     margin: 0px auto 0px auto;
+}
+
+#mainToast{
+    position: fixed;
+    width: 100%;
+    animation: toastDisp 7s ease 1;
+}
+
+#mainToast #toastM{
+    position: relative;
+    width: 330px;
+    height: 50px;
+    margin: 0px auto;
+    background-color: black;
+    color: white;
+    top: -10px;
+    border-radius: 10px;
+}
+#mainToast #toastM h3{
+    padding: 10px;
+}
+
+@keyframes toastDisp{
+    0%{top: 90%; opacity: 0;}
+    50%{top: 80%; opacity: 1;}
+    100%{top: 90%; opacity: 0;}
 }

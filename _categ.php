@@ -1,5 +1,6 @@
 <?php
 $categ="";
+$querym="";
 if(isset($_GET["categ"])){
     switch($_GET["categ"]){
         case "mobile":
