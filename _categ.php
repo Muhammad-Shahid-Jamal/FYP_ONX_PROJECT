@@ -86,7 +86,6 @@ if(isset($_GET["categ"])){
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <a class="h1 ad" href="#">Out Class Mobile in Cheap Price</a>
-                    <h3 class="text-success">Brand</h3>
                     <h4>Details</h4>
                     <p>
                         lorem ipsem ksjfdsjfk sdfjld fk <a href="#">See More</a>
@@ -106,7 +105,6 @@ if(isset($_GET["categ"])){
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6">
                     <a class="h1 ad" href="#">Out Class Mobile in Cheap Price</a>
-                    <h3 class="text-success">Brand</h3>
                     <h4>Details</h4>
                     <p>
                         lorem ipsem ksjfdsjfk sdfjld fk <a href="#">See More</a>
