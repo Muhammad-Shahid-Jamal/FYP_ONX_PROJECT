@@ -51,8 +51,7 @@
             		<div class="col-lg-3 col-sm-3 col-md-3 text-right" >
                 		<h4>Category<span class="text-danger">*</span></h4>
                		</div>
-                	<div class="col-md-6 col-sm-6 col-lg-6">
-                		
+                	<div class="col-md-6 col-sm-6 col-lg-6" id="slCat">
                         	<select class="form-control" name="Category" id="catSelect">
          						<option label="" style="display:none;">Choose</option>
                                 <option value="mob">Mobiles</option>
@@ -64,6 +63,7 @@
                                 <option value="kid">Kids</option>
                                 <option value="pro">Property</option>
                             </select>
+                        <span class="text-danger" id="catSelection"></span>
                 	</div>
                 </div>
                 <div class="row">
@@ -71,7 +71,6 @@
                 		<h4>Price<span class="text-danger">*</span></h4>
                		</div>
                 	<div class="col-md-2 col-sm-2 col-lg-2">
-<!--                    	<span class="Ad_Price">Rs</span>-->
                         <div class="input-group">
                             <span class="input-group-addon">
                                 Rs
@@ -98,7 +97,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                     	<div class="row">
                         	<div class="col-lg-3 col-md-3 col-sm-3 impBox">
-                            	<a href="php/php_files/tempup.php" >
+                            	<a href="php/php_files/tempup_main.php" >
                                 	<span>+</span>
                                 </a>
                             </div>
@@ -146,8 +145,12 @@
                 		<h4><span class=" glyphicon glyphicon-earphone" ></span> &nbsp;Phone Number<span class="text-danger">*</span></h4>
                		</div>
                 	<div class="col-md-3 col-sm-3 col-lg-3">
-                    <span class="countrycode" >+92</span>
-                    	<input type="text" class="form-control" />
+                    	<div class="input-group">
+                            <span class="input-group-addon">
+                                +92
+                            </span>
+                            <input type="text" class="form-control" placeholder="123456"/>
+                        </div>
                 	</div>
                 </div>
                 <div class="row">

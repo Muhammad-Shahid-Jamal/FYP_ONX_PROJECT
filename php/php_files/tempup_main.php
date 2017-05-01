@@ -1,10 +1,9 @@
 <?php
-require("dbHelper.php");
 require("check_user_input.php");
 if($_SERVER["REQUEST_METHOD"]== "POST"){
     $path =checkInput($_POST["path"]);
-    $img = $path.basename($_FILES["file-0"]["name"]);
-    $target ="../../".$path.basename($_FILES["file-0"]["name"]);
+    $img = $path."main/".basename($_FILES["file-0"]["name"]);
+    $target ="../../".$path."main/".basename($_FILES["file-0"]["name"]);
     if($path != ""){
         $check = getimagesize($_FILES["file-0"]["tmp_name"]);
         if($check != false){
@@ -14,6 +13,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
                 "</div>";   
             }    
         }
+        
     }
 }else{
     echo "<h1>Sorry you Have not Permission To access that page</h2>";

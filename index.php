@@ -23,7 +23,7 @@
         }
     }
     //checking condition of form of feedback
-    if($_POST){
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
         session_unset();
         session_destroy();
         if(!empty($_POST["nameOfUserFeed"]) && !empty($_POST["emailOfUserFeed"]) && !empty($_POST["msgOfUserFeed"])){
@@ -43,13 +43,24 @@
                            ."$(\"#mainToast\").remove();"
                            ."}";
            }else{
-             echo("<script>alert('something went Wrong!');</script>");
+             $toastBox="<div id=\"mainToast\">"
+                            ."<div id=\"toastM\">"
+                                ."<h3>Error</h3>"
+                            ."</div>"
+                          ."</div>";
+              $myFeedBack = "setTimeout(myToastR,8000);"
+                           ."function myToastR(){"
+                           ."$(\"#mainToast\").remove();"
+                           ."}";
            }
        }else{
              if(isset($_POST["nameOfUserFeed"]) && isset($_POST["emailOfUserFeed"]) && isset($_POST["msgOfUserFeed"])){
              echo("<script> alert(\"Please Fill Feedback Form\");</script>");
              }
         }
+    }else{
+        $toastBox="";
+        $myFeedBack="";
     }
     mysql_close($conection);
 ?>
