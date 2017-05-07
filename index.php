@@ -96,7 +96,7 @@
                 <div class="collapse navbar-collapse" id="myNav">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="select"><a href="_login.php"><span class="glyphicon glyphicon-user"></span> <?= $userName;?></a></li>
-                        <li class="select"><a href="_postad.html"><span class="glyphicon glyphicon-log-in"></span> Submit Ad</a></li>
+                        <li class="select"><a href="_postad.php"><span class="glyphicon glyphicon-log-in"></span> Submit Ad</a></li>
                         <?php echo $logoutBtn; ?>
                     </ul>
                 </div>

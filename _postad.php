@@ -1,4 +1,109 @@
- <!DOCTYPE html>
+<?php
+require("php/php_files/check_user_input.php");
+//$title ="";
+//$categ="";
+//$disc = "";
+//$price = "";
+//$name = "";
+//$number = "";
+//$provence = "";
+//$city = "";
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(!empty($_POST["titleOfAd"]) && 
+       !empty($_POST["category"]) && 
+       !empty($_POST["price"]) && 
+       !empty($_POST["disc"]) && 
+       !empty($_POST["name"]) && 
+       !empty($_POST["number"]) && 
+       !empty($_POST["prove"]) && 
+       !empty($_POST["city"]) &&
+       !empty($_POST["values-of-img"])){
+        //in condition--------------------------
+        require("php/php_files/dbHelper.php");
+//collecting data..
+        $title= checkInput($_POST["titleOfAd"]);
+        $categ = checkInput($_POST["category"]);
+        $price = checkInput($_POST["price"]);
+        $disc = checkInput($_POST["disc"]);
+        $name = checkInput($_POST["name"]);
+        $number = checkInput($_POST["number"]);
+        $provence = checkInput($_POST["prove"]);
+        $city = checkInput($_POST["city"]);
+        $valuesOfImages = checkInput($_POST["values-of-img"]);
+        
+// this is for taking name of images and pass them through loop for joining and assigning to new array 
+        $imagesValuesArrays = str_word_count($valuesOfImages,1);
+        $lengthOfValuesArray = count($imagesValuesArrays);
+        $lengthOfValuesArray = ($lengthOfValuesArray - 1);
+        $imagesForStoring = array("","","","","","");
+        $j = 0;
+        for($i=0;$i<$lengthOfValuesArray;$i++){
+            $imagesForStoring[$j] = $imagesValuesArrays[$i].".".$imagesValuesArrays[$i+1];
+            $j++;
+            $i++;
+        }
+        
+//now this is for inserting in database
+        $refOfImg = "images/userupload/mobiles/";
+        $srcOfImages = array("","","","","","");
+        for($i=0;$i<6;$i++){
+            if($imagesForStoring[$i] != ""){
+                $srcOfImages[$i] = $refOfImg.$imagesForStoring[$i];
+            }
+        }
+        $mydb = new DBaseHelper();
+        $con = $mydb->getConnection();
+        $queyOfInst = "INSERT INTO ads VALUES".
+                      "('','$categ','$title','$price',".
+                      "'$disc','$srcOfImages[0]',".
+                      "'$srcOfImages[1]','$srcOfImages[2]',".
+                      "'$srcOfImages[3]','$srcOfImages[4]',".
+                      "'$srcOfImages[5]','$name','$number','$provence','$city')";
+//execute query of db
+        if($con->query($queyOfInst)){
+            echo "<!DOCTYPE html>".
+                    "<html>".
+                        "<head>".
+                            "<title>Welcome to ONX</title>".
+                            "<link type=\"x-icon\" rel=\"icon\" href=\"images/icons/x-icon.png\">".
+                            "<link type=\"text/css\" rel=\"stylesheet\" href=\"css/bootstrap.min.css\">".
+                            "<link type=\"text/css\" rel=\"stylesheet\" href=\"css/_postad.css\">".
+                        "</head>".
+                        "<body>".
+                            "<div class=\"container text-center\">".
+                                "<img src=\"images/icons/x-icon.png\" alt=\"Icon\" id=\"onx-icon\">".
+                                "<h1>Your Add Successfully Added to ONX</h1>".
+                                "<a href=\"_categ.php?categ=mobile\"><h2>Visit Add !</h2></a>".
+                                "<img src=\"images/icons/logo.png\" alt=\"logo\">".
+                                "<p class=\"text-primary\">Team</p>".
+                            "</div>".
+                        "</body>".
+                    "</html>";
+            die();
+        }else{
+            echo "Error not update";
+            die();
+        }
+        
+        die();
+    
+    }else{
+        $title = "Error";
+    }
+//    $name = $_POST["values-of-img"];
+//    echo $name."<br>";
+//    $check1 = str_word_count($name,1);
+//    $lent = count($check1);
+//    foreach($check1 as $ans){
+//        print("<br>".$ans);
+//    }
+//    $imgCheck = $check1[0].".".$check1[1];
+//    echo "<br>".$imgCheck;
+////    $mainDir = exec("move images\\userupload\\mobiles\\temp\\main\\$imgCheck images\\userupload\\mobiles\\ ",$output,$return);
+//    die();
+}
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -38,13 +143,13 @@
             <h2 id="heading">Submit AD</h2>
         </div>
         <div class="container">
-        	<form role="form" method="post" action="php/php_files/submit_ad.php">
+        	<form role="form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         		<div class="row">
             		<div class="col-lg-3 col-sm-3 col-md-3 text-right" >
                 		<h4>Ad Title<span class="text-danger">*</span></h4>
                		</div>
                 	<div class="col-md-6 col-sm-6 col-lg-6">
-                		<input type="text" class="form-control" placeholder="Ad Title" />
+                		<input type="text" class="form-control" name="titleOfAd" placeholder="Ad Title">
                 	</div>
                 </div>
                 <div class="row">
@@ -52,16 +157,16 @@
                 		<h4>Category<span class="text-danger">*</span></h4>
                		</div>
                 	<div class="col-md-6 col-sm-6 col-lg-6" id="slCat">
-                        	<select class="form-control" name="Category" id="catSelect">
+                        	<select class="form-control" name="category" id="catSelect">
          						<option label="" style="display:none;">Choose</option>
-                                <option value="mob">Mobiles</option>
-                                <option value="car">Cars</option>
-                                <option value="bik">Bikes</option>
-                                <option value="elec">Electronic Items</option>
-                                <option value="pet">Pets</option>
-                                <option value="fur">Furnitures</option>
+                                <option value="mobiles">Mobiles</option>
+                                <option value="cars">Cars</option>
+                                <option value="bikes">Bikes</option>
+                                <option value="electron">Electronic Items</option>
+                                <option value="pets">Pets</option>
+                                <option value="furn">Furnitures</option>
                                 <option value="kid">Kids</option>
-                                <option value="pro">Property</option>
+                                <option value="prop">Property</option>
                             </select>
                         <span class="text-danger" id="catSelection"></span>
                 	</div>
@@ -75,7 +180,7 @@
                             <span class="input-group-addon">
                                 Rs
                             </span>
-                            <input type="text" class="form-control" placeholder="00000"/>
+                            <input type="text" class="form-control" name="price" placeholder="00000">
                         </div>
                 		
                     </div>
@@ -86,7 +191,7 @@
                 		<h4>Ad Description<span class="text-danger">*</span></h4>
                		</div>
                 	<div class="col-md-6 col-sm-6 col-lg-6">
-                		<textarea class="form-control" id="AD-description" placeholder="Include the brand,model,age and any included accessories."></textarea>
+                		<textarea class="form-control" id="AD-description" name="disc" placeholder="Include the brand,model,age and any included accessories."></textarea>
                 	</div>
                 </div>
                  <div class="row">
@@ -97,7 +202,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                     	<div class="row">
                         	<div class="col-lg-3 col-md-3 col-sm-3 impBox">
-                            	<a href="php/php_files/tempup_main.php" >
+                            	<a href="php/php_files/tempup_main.php">
                                 	<span>+</span>
                                 </a>
                             </div>
@@ -137,7 +242,7 @@
                 		<h4>Name<span class="text-danger">*</span></h4>
                		</div>
                 	<div class="col-md-3 col-sm-3 col-lg-3">
-                		<input type="text" class="form-control" placeholder="Name" />
+                		<input type="text" class="form-control" placeholder="Name" name="name" />
                 	</div>
                 </div>
                 <div class="row">
@@ -149,7 +254,7 @@
                             <span class="input-group-addon">
                                 +92
                             </span>
-                            <input type="text" class="form-control" placeholder="123456"/>
+                            <input type="text" class="form-control" placeholder="123456" name="number" />
                         </div>
                 	</div>
                 </div>
@@ -159,7 +264,7 @@
                		</div>
                 	<div class="col-md-4 col-sm-4 col-lg-4">
                 		
-                        	<select class="form-control" name="Category">
+                        	<select class="form-control" name="prove">
          						<option label="" style="display:none;">Choose</option>
                                 <option value="1">Azad Kashmir</option>
                                 <option value="2">Balochistan</option>
@@ -178,7 +283,7 @@
                		</div>
                 	<div class="col-md-4 col-sm-4 col-lg-4">
                 		
-                        	<select class="form-control" name="Category">
+                        	<select class="form-control" name="city">
          						<option label="" style="display:none;">Choose</option>
                                 <option value="1">Bagh</option>
                                 <option value="2">Bhimber</option>
@@ -189,7 +294,8 @@
                 </div>
 				<div class="row">
             		<div class="col-lg-8 col-sm-8 col-md-8 text-right" >
-                		<input type="submit" class="Form_Submit" />
+                        <input type="text" style="display:none;" name="values-of-img">
+                		<input type="submit" name="submit" class="Form_Submit" />
                		</div>
                 </div>
             </form>
