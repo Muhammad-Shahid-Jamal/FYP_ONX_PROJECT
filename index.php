@@ -138,19 +138,19 @@
             <div class="row md-cat">
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/mob.png" alt="Mobile Icon" class="img-responsive cat-icons">
-                    <a href="_categ.php?categ=mobile" class="h3" style="text-decoration:none; display:block;">Mobile</a>
+                    <a href="_categ.php?categ=mobile" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">MOBILE</a>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/car.png" alt="Car Icon" class="img-responsive cat-icons">
-                    <a href="_categ.php?categ=cars" class="h3" style="text-decoration:none; display:block;">Cars</a>
+                    <a href="_categ.php?categ=cars" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">CARS</a>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/bikes.png" alt="Bikes" class="img-responsive cat-icons">
-                    <a href="_categ.php?categ=bikes" class="h3" style="text-decoration:none; display:block;">Bike</a>
+                    <a href="_categ.php?categ=bikes" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">BIKE</a>
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3 text-center">
                     <img src="images/icons/elec.png" alt="electronic item icon" class="img-responsive cat-icons">
-                    <a href="_categ.php?categ=electronic" class="h3" style="text-decoration:none; display:block;">Electronic Item</a>
+                    <a href="_categ.php?categ=electronic" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">ELECTRONIC ITEM</a>
                 </div>
             </div>
         </div>
@@ -160,36 +160,36 @@
             <div class="row" id="categ1">
                 <div class="cat text-center">
                     <img src="images/icons/mob.png" alt="mobile pic">
-                    <a href="_categ.php?categ=mobile" class="h3" style="text-decoration:none; display:block;">Mobile</a>
+                    <a href="_categ.php?categ=mobile" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">MOBILE</a>
                 </div>
                 <div class="cat text-center">
                     <img src="images/icons/car.png" alt="Car Icon">
-                    <a href="_categ.php?categ=cars" class="h3" style="text-decoration:none; display:block;">Cars</a>
+                    <a href="_categ.php?categ=cars" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">CARS</a>
                 </div>
                 <div class="cat text-center">
                     <img src="images/icons/bikes.png" alt="Bikes">
-                    <a href="_categ.php?categ=bikes" class="h3" style="text-decoration:none; display:block;">Bike</a>
+                    <a href="_categ.php?categ=bikes" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">BIKE</a>
                 </div>
                 <div class="cat text-center">
                     <img src="images/icons/elec.png" alt="electronic item icon">
-                    <a href="_categ.php?categ=electronic" class="h3" style="text-decoration:none; display:block;">Electronic Item</a>
+                    <a href="_categ.php?categ=electronic" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">ELECTRONIC ITEM</a>
                 </div>
                 <!--Next Categ for small screens always visible-->
                 <div class="text-center cat">
                     <img src="images/icons/pet.png">
-                    <a href="_categ.php?categ=pet" class="h3" style="text-decoration:none; display:block;">Pets</a>
+                    <a href="_categ.php?categ=pet" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">PETS</a>
                 </div>
                 <div class="text-center cat">
                     <img src="images/icons/furn.png">
-                    <a href="_categ.php?categ=furn" class="h3" style="text-decoration:none; display:block;">Furniture</a>
+                    <a href="_categ.php?categ=furn" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">FURNITURE</a>
                 </div>
                 <div class="text-center cat">
                     <img src="images/icons/kids.png">
-                    <a href="_categ.php?categ=kids" class="h3" style="text-decoration:none; display:block;">Kids</a>
+                    <a href="_categ.php?categ=kids" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">KIDS</a>
                 </div>
                 <div class="text-center cat">
                     <img src="images/icons/prop.png">
-                    <a href="_categ.php?categ=prop" class="h3" style="text-decoration:none; display:block;">Properties</a>
+                    <a href="_categ.php?categ=prop" class="h4" style="text-decoration:none; display:block; letter-spacing: 5px;">PROPERTIES</a>
                 </div>
             </div>
         </div>
@@ -198,9 +198,9 @@
             <div class="raw" style="margin-top:20px;">
                 <div class="col-md-8 col-lg-8">
                     <div class="row">
-                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-center" style="background-color:white; border-radius:2%;">
-                            <img src="images/icons/logo.png" class="img-responsive" >
-                            <h4>Pakistan</h4>
+                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-center" style="background-color:#0080c0; border-radius:2%; color:white;">
+                            <img src="images/icons/logoindex.png" class="img-responsive" >
+                            <h3 style="margin-top:-10px;">Pakistan</h3>
                         </div>
                         <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 text-center">
                             <h5 style="color:white;">Terms Of Use</h5>

@@ -1,0 +1,113 @@
+#main-div{
+    margin-top: 5%;
+}
+#picOfAdd{
+    width: 90%;
+    margin: auto;
+}
+#priceTag{
+    position: relative;
+    height: 100px;
+    background-color: rgb(24,255,255);
+    border-radius: 10px;
+}
+#priceTag:after {
+	content: '';
+    position: absolute;
+    left: -16%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid transparent;
+    border-top: 30px solid transparent;
+    border-left: 30px solid transparent;
+    border-right: 30px solid rgb(24,255,255);
+    margin-top: -30px;
+}
+#priceTag h1 {
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    left: 100px;
+}
+
+@media screen and (max-width:480px){
+    #priceTag:after {
+	   content: '';
+        position: absolute;
+        left: -16%;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border-bottom: 30px solid transparent;
+        border-top: 30px solid transparent;
+        border-left: 30px solid transparent;
+        border-right: 30px solid rgb(24,255,255);
+        margin-top: -30px;
+        display: none;
+    }
+    #priceTag {
+	       position: relative;
+            left: -10px;
+    }
+}
+
+#user:before{
+	font-size: 2em;
+}
+
+.my-box{
+    margin-top: 10px;
+}
+.img-thumb{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+#img-timeline{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#phoneNum{
+    background-color: #0080c0;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px lightgrey;
+    padding: 10px 0px 10px 0px;
+}
+.img-thumb .img-responsive {
+    height: 100%;
+    margin: auto;
+    filter: opacity(30%);
+    transition: 1s;
+}
+
+.img-thumb .img-responsive:hover {
+    cursor: pointer;
+    filter: opacity(100%);
+}
+#onxLogo{
+    margin: -10px auto;
+}
+#footer{
+    padding-bottom: 50px;
+}
+#homeDir{
+    position: fixed;
+    background-color: #0080c0;
+    width: 130px;
+    height: 30px;
+    padding: 5px;
+    z-index: 1;
+    text-align: right;
+    border-radius: 4px 8px 30px 0px;
+    padding-right: 15px;
+    top: 120px;
+    left: -98px;
+    color: white;
+    transition: 1s;
+}
+#homeDir:hover{
+    text-decoration: none;
+    left: 0px;
+}

@@ -94,10 +94,10 @@ var CatAnim = {
             left:"-110%"
         },1500,function(){
             $(".md-cat").css({"left":"110%"});
-            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[4],"Pet Icon",1,"Pets",CatAnim.cate_src[4]);
-            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[5],"Furneture Icon",3,"Furneture",CatAnim.cate_src[5]);
-            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[6],"Kids Icon",5,"Kids",CatAnim.cate_src[6]);
-            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[7],"Prop Icon",7,"Properties",CatAnim.cate_src[7]);
+            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[4],"Pet Icon",1,"PETS",CatAnim.cate_src[4]);
+            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[5],"Furneture Icon",3,"FURNITURE",CatAnim.cate_src[5]);
+            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[6],"Kids Icon",5,"KIDS",CatAnim.cate_src[6]);
+            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[7],"Prop Icon",7,"PROPERTIES",CatAnim.cate_src[7]);
             $(".md-cat").animate({
                 opacity:"1",
                 left:"0%"
@@ -110,10 +110,10 @@ var CatAnim = {
             left:"110%"
         },1500,function(){
             $(".md-cat").css({"left":"-110%"});
-            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[0],"Mobile Icon",1,"Mobiles",CatAnim.cate_src[0]);
-            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[1],"Car Icon",3,"Cars",CatAnim.cate_src[1]);
-            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[2],"Bike Icon",5,"Bike",CatAnim.cate_src[2]);
-            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[3],"Elec Icon",7,"Electronic Item",CatAnim.cate_src[3]);
+            CatAnim.changeIconsAndText(0,CatAnim.imageSrc_main[0],"Mobile Icon",1,"MOBILES",CatAnim.cate_src[0]);
+            CatAnim.changeIconsAndText(2,CatAnim.imageSrc_main[1],"Car Icon",3,"CARS",CatAnim.cate_src[1]);
+            CatAnim.changeIconsAndText(4,CatAnim.imageSrc_main[2],"Bike Icon",5,"BIKE",CatAnim.cate_src[2]);
+            CatAnim.changeIconsAndText(6,CatAnim.imageSrc_main[3],"Elec Icon",7,"ELECTRONIC ITEM",CatAnim.cate_src[3]);
             $(".md-cat").animate({
                 opacity:"1",
                 left:"0%"

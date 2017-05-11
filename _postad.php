@@ -53,14 +53,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
         $mydb = new DBaseHelper();
         $con = $mydb->getConnection();
-        $queyOfInst = "INSERT INTO ads VALUES".
-                      "('','$categ','$title','$price',".
+        $queyOfInst = "INSERT INTO ads (_categ, _title, _price, _discription, _mainpic, _img2, _img3, _img4, _img5, _img6, _name, _phone, _provence, _city) values".
+                      "('$categ','$title','$price',".
                       "'$disc','$srcOfImages[0]',".
                       "'$srcOfImages[1]','$srcOfImages[2]',".
                       "'$srcOfImages[3]','$srcOfImages[4]',".
                       "'$srcOfImages[5]','$name','$number','$provence','$city')";
 //execute query of db
         if($con->query($queyOfInst)){
+            $mydb->disconnect();
+            $mainDir = exec("move images\\userupload\\mobiles\\temp\\main\\$imagesForStoring[0] images\\userupload\\mobiles\\ ",$output,$return);
+            for($i = 1; $i < 6; $i++){
+                if($imagesForStoring[$i] != ""){
+                    $mainDir = exec("move images\\userupload\\mobiles\\temp\\$imagesForStoring[$i] images\\userupload\\mobiles\\ ",$output,$return);
+                }
+            }
             echo "<!DOCTYPE html>".
                     "<html>".
                         "<head>".
@@ -126,19 +133,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a href="#" class="navbar-brand">
+                    <a href="index.php" class="navbar-brand">
                         <img src="images/icons/logo.png" class="logo">| ONline eXchange
                     </a>
                 </div>
                 
                 <div class="collapse navbar-collapse" id="myNav">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="select"><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+                        <li class="select"><a href="_login.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
                         
                     </ul>
                 </div>
             </div>
         </nav>
+        <a href="index.php" id="homeDir">HOME <span class="glyphicon glyphicon-home"></span></a>
         <div class="container">
             <h2 id="heading">Submit AD</h2>
         </div>
@@ -266,29 +274,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 		
                         	<select class="form-control" name="prove">
          						<option label="" style="display:none;">Choose</option>
-                                <option value="1">Azad Kashmir</option>
-                                <option value="2">Balochistan</option>
-                                <option value="3">Federally Administered Tribal Areas</option>
-                                <option value="4">Islamabad Capital Territory</option>
-                                <option value="5">Khyber Pakhtunkhwa</option>
-                                <option value="6">Northern Areas</option>
-                                <option value="7">Punjab</option>
-                                <option value="8">Sindh</option>
+                                <option value="Azad Kashmir">Azad Kashmir</option>
+                                <option value="Balochistan">Balochistan</option>
+                                <option value="Kyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+                                <option value="Northern Areas">Northern Areas</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Sindh">Sindh</option>
                             </select>
                 	</div>
                 </div>
-                <div class="row">
+                <div class="row" id="citySelection">
             		<div class="col-lg-3 col-sm-3 col-md-3 text-right" >
                 		<h4>City<span class="text-danger">*</span></h4>
                		</div>
                 	<div class="col-md-4 col-sm-4 col-lg-4">
                 		
                         	<select class="form-control" name="city">
-         						<option label="" style="display:none;">Choose</option>
-                                <option value="1">Bagh</option>
-                                <option value="2">Bhimber</option>
-                                <option value="3">Mirpur</option>
-                                <option value="4">Muzaffarabad</option>
                             </select>
                 	</div>
                 </div>

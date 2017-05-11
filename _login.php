@@ -55,7 +55,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4" id="login-box">
-                    <img src="images/icons/logo.png" alt="ONX LOGO" class="img-responsive">
+                    <a href="index.php">
+                        <img src="images/icons/logo.png" alt="ONX LOGO" class="img-responsive">
+                    </a>
                     <h2 style="color: #0080c0; margin-top: -5px;">Sign In</h2>
                     <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group">
