@@ -11,7 +11,7 @@
 
 ### View Ad.
 
-<img src="images/git-images/add_view.jpg">
+<img src="images/git-images/single_ad_view.jpg">
 
 ### Sign Up.
 
