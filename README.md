@@ -47,7 +47,7 @@
 
 ..*..* AJAX
 
-..*..* JASON
+..*..* JSON
 
 ## Server Side
 
